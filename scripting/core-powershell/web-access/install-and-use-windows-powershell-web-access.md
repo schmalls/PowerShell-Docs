@@ -10,188 +10,166 @@ Updated: November 5, 2013
 
 Applies To: Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell® Web Access, first introduced in Windows Server® 2012, acts as a Windows PowerShell gateway, providing a web-based Windows PowerShell console that is targeted at a remote computer. It enables IT Pros to run Windows PowerShell commands and scripts from a Windows PowerShell console in a web browser, with no Windows PowerShell, remote management software, or browser plug-in installation necessary on the client device. All that is required to run the web-based Windows PowerShell console is a properly-configured Windows PowerShell Web Access gateway, and a client device browser that supports JavaScript® and accepts cookies.
+## Introduction
 
-Examples of client devices include laptops, non-work personal computers, borrowed computers, tablet computers, web kiosks, computers that are not running a Windows-based operating system, and cell phone browsers. IT Pros can perform critical management tasks on remote Windows-based servers from devices that have access to an Internet connection and a web browser.
+Windows PowerShell® Web Access, first introduced in Windows Server® 2012,
+acts as a Windows PowerShell gateway, providing a web-based Windows
+PowerShell console that is targeted at a remote computer. It enables IT
+Pros to run Windows PowerShell commands and scripts from a Windows
+PowerShell console in a web browser, with no Windows PowerShell, remote
+management software, or browser plug-in installation necessary on the
+client device. All that is required to run the web-based Windows PowerShell
+console is a properly-configured Windows PowerShell Web Access gateway, and
+a client device browser that supports JavaScript® and accepts cookies.
 
-After successful gateway setup and configuration, users can access a Windows PowerShell console by using a web browser. When users open the secured Windows PowerShell Web Access website, they can run a web-based Windows PowerShell console after successful authentication.
+Examples of client devices include laptops, non-work personal computers,
+borrowed computers, tablet computers, web kiosks, computers that are not
+running a Windows-based operating system, and cell phone browsers. IT Pros
+can perform critical management tasks on remote Windows-based servers from
+devices that have access to an Internet connection and a web browser.
+
+After successful gateway setup and configuration, users can access a
+Windows PowerShell console by using a web browser. When users open the
+secured Windows PowerShell Web Access website, they can run a web-based
+Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1.  Installing Windows PowerShell Web Access
+1. Installing Windows PowerShell Web Access
+2. Configuring the gateway
+3. Configuring authorization rules that allow users access to the web-based Windows PowerShell console
 
-2.  Configuring the gateway
+Before you install and configure Windows PowerShell Web Access, we
+recommend that you read this entire guide, which includes instructions
+about how to install, secure, and uninstall Windows PowerShell Web Access.
+The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+topic describes how users sign in to the web-based console, and covers
+limitations and differences between the web-based Windows PowerShell
+console and the **powershell.exe** console. End users of the web-based
+console should read [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx),
+but do not need to read the rest of this guide.
 
-3.  Configuring authorization rules that allow users access to the web-based Windows PowerShell console
-
-Before you install and configure Windows PowerShell Web Access, we recommend that you read this entire guide, which includes instructions about how to install, secure, and uninstall Windows PowerShell Web Access. The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) topic describes how users sign in to the web-based console, and covers limitations and differences between the web-based Windows PowerShell console and the **powershell.exe** console. End users of the web-based console should read [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx), but do not need to read the rest of this guide.
-
-This topic does not provide in-depth Web Server (IIS) operations guidance; only those steps required to configure the Windows PowerShell Web Access gateway are described in this topic. For more information about configuring and securing websites in IIS, see the IIS documentation resources in the See Also section.
+This topic does not provide in-depth Web Server (IIS) operations guidance;
+only those steps required to configure the Windows PowerShell Web Access
+gateway are described in this topic. For more information about configuring
+and securing websites in IIS, see the IIS documentation resources in the
+See Also section.
 
 The following diagram shows how Windows PowerShell Web Access works.
 
-<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access diagram" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
+![Windows PowerShell Web Access diagram](images/Windows-PowerShell-Web-Access-diagram.jpg)
 
 In this topic:
 
--   [Requirements for running Windows PowerShell Web Access](#BKMK_reqs)
+- [Requirements for running Windows PowerShell Web Access]()
+- [Browser and client device support]()
+- [Recommended (quick) deployment]()
+- [Custom deployment]()
+- [Configure a genuine certificate]()
 
--   [Browser and client device support](#BKMK_browser)
+## Requirements for running Windows PowerShell Web Access
 
--   [Recommended (quick) deployment](#BKMK_recm)
+Windows PowerShell Web Access requires Web Server (IIS), .NET Framework
+4.5, and Windows PowerShell 3.0 or Windows PowerShell 4.0 to be running on
+the server on which you want to run the gateway. You can install Windows
+PowerShell Web Access on a server that is running Windows Server 2012 R2 or
+Windows Server 2012 by using either the Add Roles and Features Wizard in
+Server Manager, or Windows PowerShell deployment cmdlets for Server
+Manager. When you install Windows PowerShell Web Access by using Server
+Manager or its deployment cmdlets, required roles and features are
+automatically added as part of the installation process.
 
--   [Custom deployment](#BKMK_custom)
+Windows PowerShell Web Access allows remote users to access computers in
+your organization by using Windows PowerShell in a web browser. Although
+Windows PowerShell Web Access is a convenient and powerful management tool,
+the web-based access poses security risks, and should be configured as
+securely as possible. We recommend that administrators who configure the
+Windows PowerShell Web Access gateway use available security layers, both
+the cmdlet-based authorization rules included with Windows PowerShell Web
+Access, and security layers that are available in Web Server (IIS) and
+third-party applications. This documentation includes both unsecure
+examples that are only recommended for test environments, as well as
+examples that are recommended for secure deployments.
 
--   [Configure a genuine certificate](#BKMK_configcert)
-
-<a href="" id="BKMK_reqs"></a>
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Requirements for running Windows PowerShell Web Access</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
-
-Windows PowerShell Web Access requires Web Server (IIS), .NET Framework 4.5, and Windows PowerShell 3.0 or Windows PowerShell 4.0 to be running on the server on which you want to run the gateway. You can install Windows PowerShell Web Access on a server that is running Windows Server 2012 R2 or Windows Server 2012 by using either the Add Roles and Features Wizard in Server Manager, or Windows PowerShell deployment cmdlets for Server Manager. When you install Windows PowerShell Web Access by using Server Manager or its deployment cmdlets, required roles and features are automatically added as part of the installation process.
-
-Windows PowerShell Web Access allows remote users to access computers in your organization by using Windows PowerShell in a web browser. Although Windows PowerShell Web Access is a convenient and powerful management tool, the web-based access poses security risks, and should be configured as securely as possible. We recommend that administrators who configure the Windows PowerShell Web Access gateway use available security layers, both the cmdlet-based authorization rules included with Windows PowerShell Web Access, and security layers that are available in Web Server (IIS) and third-party applications. This documentation includes both unsecure examples that are only recommended for test environments, as well as examples that are recommended for secure deployments.
-
-<a href="" id="BKMK_browser"></a>
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browser and client device support</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
+## Browser and client device support
 
 Windows PowerShell Web Access supports the following Internet browsers. Although mobile browsers are not officially supported, many may be able to run the web-based Windows PowerShell console. Other browsers that accept cookies, run JavaScript, and run HTTPS websites are expected to work, but are not officially tested.
 
-###
+### Supported desktop computer browsers
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Supported desktop computer browsers</span></a>
+- Windows® Internet Explorer® for Microsoft Windows® 8.0, 9.0, 10.0, and 11.0
 
-------------------------------------------------------------------------
+- Mozilla Firefox® 10.0.2
 
--   Windows® Internet Explorer® for Microsoft Windows® 8.0, 9.0, 10.0, and 11.0
+- Google Chrome™ 17.0.963.56m for Windows
 
--   Mozilla Firefox® 10.0.2
+- Apple Safari® 5.1.2 for Windows
 
--   Google Chrome™ 17.0.963.56m for Windows
+- Apple Safari 5.1.2 for Mac OS®
 
--   Apple Safari® 5.1.2 for Windows
+### Minimally-tested mobile devices or browsers
 
--   Apple Safari 5.1.2 for Mac OS®
+- Windows Phone 7 and 7.5
 
-###
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Minimally-tested mobile devices or browsers</span></a>
+- Apple Safari for iPhone operating system 5.0.1
 
-------------------------------------------------------------------------
+- Apple Safari for iPad 2 operating system 5.0.1
 
--   Windows Phone 7 and 7.5
-
--   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
-
--   Apple Safari for iPhone operating system 5.0.1
-
--   Apple Safari for iPad 2 operating system 5.0.1
-
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browser requirements</span></a>
-
-------------------------------------------------------------------------
+### Browser requirements
 
 To use the Windows PowerShell Web Access web-based console, browsers must do the following.
 
--   Allow cookies from the Windows PowerShell Web Access gateway website.
+- Allow cookies from the Windows PowerShell Web Access gateway website.
+- Be able to open and read HTTPS pages.
+- Open and run websites that use JavaScript.
 
--   Be able to open and read HTTPS pages.
+## Recommended (quick) deployment
 
--   Open and run websites that use JavaScript.
+You can install the Windows PowerShell Web Access gateway on a server that
+is running Windows Server 2012 R2 or Windows Server 2012 by using either
+Windows PowerShell cmdlets, or by using the Add Roles and Features Wizard
+that is opened from within Server Manager. For quick installation and
+configuration, use Windows PowerShell cmdlets, as described in this
+section.
 
-<a href="" id="BKMK_recm"></a>
+- [Step 1: Install Windows PowerShell Web Access]()
+- [Step 2: Configure the gateway]()
+- [Step 3: Configure a restrictive authorization rule]()
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Recommended (quick) deployment</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
-
-You can install the Windows PowerShell Web Access gateway on a server that is running Windows Server 2012 R2 or Windows Server 2012 by using either Windows PowerShell cmdlets, or by using the Add Roles and Features Wizard that is opened from within Server Manager. For quick installation and configuration, use Windows PowerShell cmdlets, as described in this section.
-
--   [Step 1: Install Windows PowerShell Web Access](#BKMK_step1)
-
--   [Step 2: Configure the gateway](#BKMK_step2)
-
--   [Step 3: Configure a restrictive authorization rule](#BKMK_step3)
-
-<a href="" id="BKMK_step1"></a>
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Step 1: Install Windows PowerShell Web Access</span></a>
-
-------------------------------------------------------------------------
+### Step 1: Install Windows PowerShell Web Access
 
 #### To install Windows PowerShell Web Access by using Windows PowerShell cmdlets
 
-1.  Do one of the following to open a Windows PowerShell session with elevated user rights.
+1. Do one of the following to open a Windows PowerShell session with elevated user rights.
+  - On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
+  - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-    -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
+  >**Note**
+  >In Windows PowerShell 3.0 and 4.0, there is no need to import the Server Manager cmdlet module into the Windows PowerShell session before running cmdlets that are part of the module. A module is automatically imported the first time you run a cmdlet that is part of the module. Also, Windows PowerShell cmdlets are not case-sensitive.
 
-    -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
+2. Type the following, and then press **Enter**, where *computer_name* represents a remote computer on which you want to install Windows PowerShell Web Access, if applicable. The `-Restart` parameter automatically restarts destination servers if required.
 
-    <table>
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Note </span></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>In Windows PowerShell 3.0 and 4.0, there is no need to import the Server Manager cmdlet module into the Windows PowerShell session before running cmdlets that are part of the module. A module is automatically imported the first time you run a cmdlet that is part of the module. Also, Windows PowerShell cmdlets are not case-sensitive.</p></td>
-    </tr>
-    </tbody>
-    </table>
+```powershell
+Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
+```
 
-2.  Type the following, and then press **Enter**, where *computer_name* represents a remote computer on which you want to install Windows PowerShell Web Access, if applicable. The <span class="code">Restart</span> parameter automatically restarts destination servers if required.
+  >**Note**
+  >
+  >Installing Windows PowerShell Web Access by using Windows PowerShell cmdlets does not add Web Server (IIS) management tools by default. If you want to install the management tools on the same server as the Windows PowerShell Web Access gateway, add the `IncludeManagementTools` parameter to the installation command (as provided in this step). If you are managing the Windows PowerShell Web Access website from a remote computer, install the IIS Manager snap-in by installing [Remote Server Administration Tools for Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) or [Remote Server Administration Tools for Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) on the computer from which you want to manage the gateway.
+  >
+  >To install roles and features on an offline VHD, you must add both the <span class="code">ComputerName</span> parameter and the <span class="code">VHD</span> parameter. The <span class="code">ComputerName</span> parameter contains the name of the server on which to mount the VHD, and the <span class="code">VHD</span> parameter contains the path to the VHD file on the specified server.
 
-    [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "Copy to clipboard.")
-
-        Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
-
-    <table>
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Note </span></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>Installing Windows PowerShell Web Access by using Windows PowerShell cmdlets does not add Web Server (IIS) management tools by default. If you want to install the management tools on the same server as the Windows PowerShell Web Access gateway, add the <span class="code">IncludeManagementTools</span> parameter to the installation command (as provided in this step). If you are managing the Windows PowerShell Web Access website from a remote computer, install the IIS Manager snap-in by installing <a href="http://go.microsoft.com/fwlink/?LinkID=304145">Remote Server Administration Tools for Windows 8.1</a> or <a href="http://go.microsoft.com/fwlink/p/?LinkID=238560">Remote Server Administration Tools for Windows 8</a> on the computer from which you want to manage the gateway.</p></td>
-    </tr>
-    </tbody>
-    </table>
-
-    To install roles and features on an offline VHD, you must add both the <span class="code">ComputerName</span> parameter and the <span class="code">VHD</span> parameter. The <span class="code">ComputerName</span> parameter contains the name of the server on which to mount the VHD, and the <span class="code">VHD</span> parameter contains the path to the VHD file on the specified server.
-
-    [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d841d509-347e-49d0-bf54-8d1f306bece6'); "Copy to clipboard.")
-
+```powershell
         Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
+```
 
-3.  When installation is complete, verify that Windows PowerShell Web Access was installed on destination servers by running the **Get-WindowsFeature** cmdlet on a destination server, in a Windows PowerShell console that has been opened with elevated user rights. You can also verify that Windows PowerShell Web Access was installed in the Server Manager console, by selecting a destination server on the **All Servers** page, and then viewing the **Roles and Features** tile for the selected server. You can also view the readme file for Windows PowerShell Web Access.
+3. When installation is complete, verify that Windows PowerShell Web Access was installed on destination servers by running the **Get-WindowsFeature** cmdlet on a destination server, in a Windows PowerShell console that has been opened with elevated user rights. You can also verify that Windows PowerShell Web Access was installed in the Server Manager console, by selecting a destination server on the **All Servers** page, and then viewing the **Roles and Features** tile for the selected server. You can also view the readme file for Windows PowerShell Web Access.
 
-4.  After Windows PowerShell Web Access is installed, you are prompted to review the readme file, which contains basic, required setup instructions for the gateway. These setup instructions are also in the following section, [Step 2: Configure the gateway](#BKMK_step2). The path to the readme file is <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt</span>.
+4. After Windows PowerShell Web Access is installed, you are prompted to review the readme file, which contains basic, required setup instructions for the gateway. These setup instructions are also in the following section, [Step 2: Configure the gateway](). The path to the readme file is **C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt**.
 
-<a href="" id="BKMK_step2"></a>
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Step 2: Configure the gateway</span></a>
-
-------------------------------------------------------------------------
+### Step 2: Configure the gateway
 
 The **Install-PswaWebApplication** cmdlet is a quick way to get Windows PowerShell Web Access configured. Although you can add the <span class="code">UseTestCertificate</span> parameter to the <span class="code">Install-PswaWebApplication</span> cmdlet to install a self-signed SSL certificate for test purposes, this is not secure; for a secure production environment, always use a valid SSL certificate that has been signed by a certification authority (CA). Administrators can replace the test certificate with a signed certificate of their choice by using the IIS Manager console.
 
@@ -213,17 +191,17 @@ You can complete Windows PowerShell Web Access web application configuration eit
 </tbody>
 </table>
 
--   [To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication](#BKMK_testcert)
+- [To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication]()
 
--   [To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager](#BKMK_gencert)
+- [To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager]()
 
 #### To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication
 
 1.  Do one of the following to open a Windows PowerShell session.
 
-    -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar.
+    - On the Windows desktop, right-click **Windows PowerShell** on the taskbar.
 
-    -   On the Windows **Start** screen, click **Windows PowerShell**.
+    - On the Windows **Start** screen, click **Windows PowerShell**.
 
 2.  Type the following, and then press **Enter**.
 
@@ -249,13 +227,13 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
     The following settings are configured by running the cmdlet. You can change these manually in the IIS Manager console, if desired.
 
-    -   Path: /pswa
+    - Path: /pswa
 
-    -   ApplicationPool: pswa_pool
+    - ApplicationPool: pswa_pool
 
-    -   EnabledProtocols: http
+    - EnabledProtocols: http
 
-    -   PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
+    - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
     <span class="label">Example:</span> <span class="code">Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate</span>
 
@@ -281,9 +259,9 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
 1.  Do one of the following to open a Windows PowerShell session.
 
-    -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar.
+    - On the Windows desktop, right-click **Windows PowerShell** on the taskbar.
 
-    -   On the Windows **Start** screen, click **Windows PowerShell**.
+    - On the Windows **Start** screen, click **Windows PowerShell**.
 
 2.  Type the following, and then press **Enter**.
 
@@ -291,19 +269,19 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
     The following gateway settings are configured by running the cmdlet. You can change these manually in the IIS Manager console, if desired. You can also specify values for the <span class="code">WebsiteName</span> and <span class="code">WebApplicationName</span> parameters of the <span class="code">Install-PswaWebApplication</span> cmdlet.
 
-    -   Path: /pswa
+    - Path: /pswa
 
-    -   ApplicationPool: pswa_pool
+    - ApplicationPool: pswa_pool
 
-    -   EnabledProtocols: http
+    - EnabledProtocols: http
 
-    -   PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
+    - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
 3.  Open the IIS Manager console by doing one of the following.
 
-    -   On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
+    - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
 
-    -   On the Windows **Start** screen, click **Server Manager**.
+    - On the Windows **Start** screen, click **Server Manager**.
 
 4.  In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Expand the **Sites** folder.
 
@@ -348,9 +326,9 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 1.  Do one of the following to open a Windows PowerShell session with elevated user rights.
 
-    -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
+    - On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
 
-    -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
+    - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
 2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
@@ -390,9 +368,9 @@ You can install the Windows PowerShell Web Access gateway on a server that is ru
 
 1.  If Server Manager is already open, go on to the next step. If Server Manager is not already open, open it by doing one of the following.
 
-    -   On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar.
+    - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar.
 
-    -   On the Windows **Start** screen, click **Server Manager**.
+    - On the Windows **Start** screen, click **Server Manager**.
 
 2.  On the **Manage** menu, click **Add Roles and Features**.
 
@@ -432,19 +410,19 @@ You can install the Windows PowerShell Web Access gateway on a server that is ru
 
 Instructions in this section are for installing the Windows PowerShell Web Access web application in a subdirectory—and not in the root directory—of your website. This procedure is the GUI-based equivalent of the actions performed by the <span class="code">Install-PswaWebApplication</span> cmdlet. This section also includes instructions for how to use IIS Manager to configure the Windows PowerShell Web Access gateway as a root website.
 
--   [To use IIS Manager to configure the gateway in an existing website](#BKMK_configman)
+- [To use IIS Manager to configure the gateway in an existing website](#BKMK_configman)
 
--   [To use IIS Manager to configure the gateway as a root website with a test certificate](#BKMK_configroot)
+- [To use IIS Manager to configure the gateway as a root website with a test certificate](#BKMK_configroot)
 
--   
+- 
 
 #### To use IIS Manager to configure the gateway in an existing website
 
 1.  Open the IIS Manager console by doing one of the following.
 
-    -   On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
+    - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
 
-    -   On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
+    - On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
 
 2.  Create a new application pool for Windows PowerShell Web Access. Expand the node of the gateway server in the IIS Manager tree pane, select **Application Pools**, and click **Add Application Pool** in the **Actions** pane.
 
@@ -504,9 +482,9 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 1.  Open the IIS Manager console by doing one of the following.
 
-    -   On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
+    - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
 
-    -   On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
+    - On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
 
 2.  In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
 
@@ -582,9 +560,9 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 1.  Do one of the following to open a Windows PowerShell session with elevated user rights.
 
-    -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
+    - On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
 
-    -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
+    - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
 2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
@@ -621,11 +599,11 @@ For a secure production environment, always use a valid SSL certificate that has
 
 3.  In the **Actions** pane, do one of the following. For more information about configuring server certificates in IIS, see [Configuring Server Certificates in IIS 7](https://technet.microsoft.com/library/cc732230.aspx).
 
-    -   Click **Import** to import an existing, valid certificate from a location on your network.
+    - Click **Import** to import an existing, valid certificate from a location on your network.
 
-    -   Click **Create Certificate Request** to request a certificate from a CA such as VeriSign™, Thawte, or GeoTrust®. The certificate's common name must match the host header in the request. For example, if the client browser requests http://www.contoso.com/, then the common name must also be http://www.contoso.com/. This is the most secure and recommended option for providing the Windows PowerShell Web Access gateway with a certificate.
+    - Click **Create Certificate Request** to request a certificate from a CA such as VeriSign™, Thawte, or GeoTrust®. The certificate's common name must match the host header in the request. For example, if the client browser requests http://www.contoso.com/, then the common name must also be http://www.contoso.com/. This is the most secure and recommended option for providing the Windows PowerShell Web Access gateway with a certificate.
 
-    -   Click **Create a Self-Signed Certificate** to create a certificate that you can use immediately, and have signed later by a CA if desired. Specify a friendly name for the self-signed certificate, such as **Windows PowerShell Web Access**. This option is not considered secure, and is recommended only for a private test environment.
+    - Click **Create a Self-Signed Certificate** to create a certificate that you can use immediately, and have signed later by a CA if desired. Specify a friendly name for the self-signed certificate, such as **Windows PowerShell Web Access**. This option is not considered secure, and is recommended only for a private test environment.
 
 4.  After creating or obtaining a certificate, select the website to which the certificate is applied (for example, **Default Web Site**) in the IIS Manager tree pane, and then click **Bindings** in the **Actions** pane.
 
@@ -687,16 +665,16 @@ Do you like the page design?
 
 Tell us more
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
--   |
--   [Contact Us](https://technet.microsoft.com/cc512759.aspx)
--   |
--   [Privacy Statement](https://privacy.microsoft.com/privacystatement)
--   |
--   [Terms of Use](https://technet.microsoft.com/cc300389.aspx)
--   |
--   [Trademarks](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
--   |
+- [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+- |
+- [Contact Us](https://technet.microsoft.com/cc512759.aspx)
+- |
+- [Privacy Statement](https://privacy.microsoft.com/privacystatement)
+- |
+- [Terms of Use](https://technet.microsoft.com/cc300389.aspx)
+- |
+- [Trademarks](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+- |
 
 © 2016 Microsoft
 

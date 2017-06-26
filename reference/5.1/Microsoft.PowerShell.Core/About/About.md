@@ -16,7 +16,7 @@ Locale: en-US
 Describes how to use alternate names for cmdlets and commands in  Windows PowerShell.
 
 ### [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
-Describes the operators that perform arithmetic in PowerShell.
+Describes the operators that perform arithmetic in Windows PowerShell.
 
 ### [about_Arrays](about_Arrays.md)
 Describes arrays, which are data structures designed to store
@@ -65,9 +65,15 @@ data from script logic.
 ### [about_Debuggers](about_Debuggers.md)
 Describes the Windows PowerShell debugger.
 
+### [about_desiredstateconfiguration](about_desiredstateconfiguration.md)
+{{Manually Enter about_desiredstateconfiguration Description Here}}
+
 ### [about_Do](about_Do.md)
 Runs a statement list one or more times, subject to a While or Until
 condition.
+
+### [about_dsclogresource](about_dsclogresource.md)
+{{Manually Enter about_dsclogresource Description Here}}
 
 ### [about_Enum](about_Enum.md)
 `enum` is used to declare an enumeration;
@@ -135,6 +141,9 @@ Describes the Group Policy settings for Windows PowerShell
 ### [about_Hash_Tables](about_Hash_Tables.md)
 Describes how to create, use, and sort hash tables in Windows PowerShell.
 
+### [about_hidden](about_hidden.md)
+Describes the Hidden keyword, which hides class members from default Get\-Member results.
+
 ### [about_History](about_History.md)
 Describes how to get and run commands in the command history.
 
@@ -161,6 +170,12 @@ PowerShell sessions.
 
 ### [about_Line_Editing](about_Line_Editing.md)
 Describes how to edit commands at the Windows PowerShell command prompt.
+
+### [about_locations](about_locations.md)
+Describes how to access items from the working location in Windows PowerShellÂ®.
+
+### [about_logical_operators](about_logical_operators.md)
+Describes the operators that connect statements in Windows PowerShellÂ®.
 
 ### [about_Methods](about_Methods.md)
 Describes how to use methods to perform actions on objects in  Windows PowerShell.
@@ -222,6 +237,12 @@ Describes how Windows PowerShell providers provide access to data and
 components that would not otherwise be easily accessible at the command
 line. The data is presented in a consistent format that resembles a file
 system drive.
+
+### [about_psconsolehostreadline](about_psconsolehostreadline.md)
+Explains how to create a customize how Windows PowerShellÂ® reads input at the console prompt.
+
+### [about_psreadline](about_psreadline.md)
+{{Manually Enter about_psreadline Description Here}}
 
 ### [about_PSSessions](about_PSSessions.md)
 Describes  Windows PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
@@ -297,9 +318,8 @@ Defines what a script block is and explains how to use script blocks in
 the Windows PowerShell programming language.
 
 ### [about_Script_Internationalization](about_Script_Internationalization.md)
-Describes the script internationalization features of Windows PowerShell 2.0
-that make it easy for scripts to display messages and instructions to users
-in their user interface (UI) language.
+Describes the script internationalization features that make it easy for scripts to display
+messages and instructions to users in their user interface (UI) language.
 
 ### [about_Session_Configurations](about_Session_Configurations.md)
 Describes session configurations, which determine the users who can
@@ -313,6 +333,9 @@ environment of sessions that use the session configuration.
 ### [about_Signing](about_Signing.md)
 Explains how to sign scripts so that they comply with the Windows
 PowerShell execution policies.
+
+### [about_simplified_syntax](about_simplified_syntax.md)
+{{Manually Enter about_simplified_syntax Description Here}}
 
 ### [about_Special_Characters](about_Special_Characters.md)
 Describes the special characters that you can use to control how
@@ -345,6 +368,9 @@ Describes how to use the Try, Catch, and Finally blocks to handle terminating er
 Explains how to use Types.ps1xml files to extend the types of objects
 that are used in Windows PowerShell.
 
+### [about_type_accelerators](about_type_accelerators.md)
+{{Manually Enter about_type_accelerators Description Here}}
+
 ### [about_Type_Operators](about_Type_Operators.md)
 Describes the operators that work with Microsoft .NET Framework types.
 
@@ -363,6 +389,9 @@ Describes a language statement that you can use to run a command block based on 
 ### [about_Wildcards](about_Wildcards.md)
 Describes how to use wildcard characters in Windows PowerShell.
 
+### [about_windows_powershell_5.1](about_windows_powershell_5.1.md)
+{{Manually Enter about_windows_powershell_5.1 Description Here}}
+
 ### [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 Describes the features and system requirements of Windows PowerShell
 Integrated Scripting Environment (ISE).
@@ -379,8 +408,4 @@ Provides background information about Windows Management Instrumentation (WMI) a
 ### [about_WQL](about_WQL.md)
 Describes WMI Query Language (WQL), which can be
 used to get WMI objects in Windows PowerShell.
-
-### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
-Provides an overview of Web Services for Management (WS-Management) as
-background for using the WS-Management cmdlets in Windows PowerShell.
 

@@ -13,10 +13,10 @@ Locale: en-US
 ## About Topics
 
 ### [about_Aliases](about_Aliases.md)
-Describes how to use alternate names for cmdlets and commands in  Windows PowerShell.
+Describes how to use alternate names for cmdlets and commands in  Windows PowerShell®.
 
 ### [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
-Describes the operators that perform arithmetic in PowerShell.
+Describes the operators that perform arithmetic in Windows PowerShell.
 
 ### [about_Arrays](about_Arrays.md)
 Describes arrays, which are data structures designed to store
@@ -26,15 +26,11 @@ collections of items.
 Describes how to use operators to assign values to variables.
 
 ### [about_Automatic_Variables](about_Automatic_Variables.md)
-Describes variables that store state information for PowerShell.
-These variables are created and maintained by PowerShell.
+Describes variables that store state information for  Windows PowerShell®. These variables are created and maintained by  Windows PowerShell.
 
 ### [about_Break](about_Break.md)
 Describes a statement you can use to immediately exit Foreach, For, While,
 Do, or Switch statements.
-
-### [about_Classes](about_Classes.md)
-Describes how you can use classes to create your own custom types.
 
 ### [about_Command_Precedence](about_Command_Precedence.md)
 Describes how Windows PowerShell determines which command to run.
@@ -68,11 +64,6 @@ Describes the Windows PowerShell debugger.
 ### [about_Do](about_Do.md)
 Runs a statement list one or more times, subject to a While or Until
 condition.
-
-### [about_Enum](about_Enum.md)
-`enum` is used to declare an enumeration;
-a distinct type that consists of a set of named labels called the
-enumerator list.
 
 ### [about_Environment_Variables](about_Environment_Variables.md)
 Describes how to access Windows environment variables in Windows
@@ -163,7 +154,7 @@ PowerShell sessions.
 Describes how to edit commands at the Windows PowerShell command prompt.
 
 ### [about_Methods](about_Methods.md)
-Describes how to use methods to perform actions on objects in  Windows PowerShell.
+Describes how to use methods to perform actions on objects in  Windows PowerShell®.
 
 ### [about_Modules](about_Modules.md)
 Explains how to install, import, and use Windows PowerShell modules.
@@ -172,7 +163,7 @@ Explains how to install, import, and use Windows PowerShell modules.
 Provides essential information about objects in Windows PowerShell.
 
 ### [about_Object_Creation](about_Object_Creation.md)
-Explains how to create objects in  Windows PowerShell.
+Explains how to create objects in  Windows PowerShell®.
 
 ### [about_Operators](about_Operators.md)
 Describes the operators that are supported by Windows PowerShell®.
@@ -180,11 +171,11 @@ Describes the operators that are supported by Windows PowerShell®.
 ### [about_Operator_Precedence](about_Operator_Precedence.md)
 Lists the Windows PowerShell operators in precedence order.
 
-### [about_PackageManagement](about_PackageManagement.md)
+### [about_packagemanagement](about_packagemanagement.md)
 PackageManagement is an aggregator for software package managers.
 
 ### [about_Parameters](about_Parameters.md)
-Describes how to work with command parameters in  Windows PowerShell.
+Describes how to work with command parameters in  Windows PowerShell®.
 
 ### [about_Parameters_Default_Values](about_Parameters_Default_Values.md)
 Describes how to set custom default values for the parameters of cmdlets and advanced functions.
@@ -193,7 +184,7 @@ Describes how to set custom default values for the parameters of cmdlets and adv
 Describes how Windows PowerShell parses commands.
 
 ### [about_Path_Syntax](about_Path_Syntax.md)
-Describes the full and relative path name formats in  Windows PowerShell.
+Describes the full and relative path name formats in  Windows PowerShell®.
 
 ### [about_pipelines](about_pipelines.md)
 Combining commands into pipelines in the Windows PowerShell
@@ -208,14 +199,14 @@ Explains how to use the PowerShell_Ise.exe command-line tool.
 ### [about_Preference_Variables](about_Preference_Variables.md)
 Variables that customize the behavior of Windows PowerShell
 
-### [about_Profiles](about_Profiles.md)
+### [about_profiles](about_profiles.md)
 Describes how to create and use a Windows PowerShell profile.
 
 ### [about_Prompts](about_Prompts.md)
 Describes the Prompt function and demonstrates how to create a custom Prompt function.
 
 ### [about_Properties](about_Properties.md)
-Describes how to use object properties in  Windows PowerShell.
+Describes how to use object properties in  Windows PowerShell®.
 
 ### [about_Providers](about_Providers.md)
 Describes how Windows PowerShell providers provide access to data and
@@ -224,20 +215,20 @@ line. The data is presented in a consistent format that resembles a file
 system drive.
 
 ### [about_PSSessions](about_PSSessions.md)
-Describes  Windows PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
+Describes  Windows PowerShell® sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 ### [about_PSSession_Details](about_PSSession_Details.md)
 Provides detailed information about Windows PowerShell sessions and the
 role they play in remote commands.
 
 ### [about_PSSnapins](about_PSSnapins.md)
-Describes  Windows PowerShell snap-ins and shows how to use and manage them.
+Describes  Windows PowerShell® snap-ins and shows how to use and manage them.
 
 ### [about_Quoting_Rules](about_Quoting_Rules.md)
-Describes rules for using single and double quotation marks in  Windows PowerShell.
+Describes rules for using single and double quotation marks in  Windows PowerShell®.
 
 ### [about_Redirection](about_Redirection.md)
-Explains how to redirect output from  Windows PowerShell to text files.
+Explains how to redirect output from  Windows PowerShell® to text files.
 
 ### [about_Ref](about_Ref.md)
 Describes how to create and use a reference variable type.
@@ -252,7 +243,7 @@ Describes how to run remote commands in Windows PowerShell.
 Explains how to disconnect from and reconnect to a PSSession
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
-Contains questions and answers about running remote commands in  Windows PowerShell.
+Contains questions and answers about running remote commands in  Windows PowerShell®.
 
 ### [about_Remote_Jobs](about_Remote_Jobs.md)
 Describes how to run background jobs on remote computers.
@@ -285,21 +276,20 @@ Exits the current scope, which can be a function, script, or script block.
 Explains how to use the "Run with PowerShell" feature to run
 a script from a file system drive.
 
-### [about_Scopes](about_Scopes.md)
+### [about_scopes](about_scopes.md)
 Explains the concept of scope in Windows PowerShell and shows how to set
 and change the scope of elements.
 
 ### [about_Scripts](about_Scripts.md)
-Describes how to run and write scripts in  Windows PowerShell.
+Describes how to run and write scripts in  Windows PowerShell®.
 
 ### [about_Script_Blocks](about_Script_Blocks.md)
 Defines what a script block is and explains how to use script blocks in
 the Windows PowerShell programming language.
 
 ### [about_Script_Internationalization](about_Script_Internationalization.md)
-Describes the script internationalization features of Windows PowerShell 2.0
-that make it easy for scripts to display messages and instructions to users
-in their user interface (UI) language.
+Describes the script internationalization features that make it easy for scripts to display
+messages and instructions to users in their user interface (UI) language.
 
 ### [about_Session_Configurations](about_Session_Configurations.md)
 Describes session configurations, which determine the users who can
@@ -351,11 +341,8 @@ Describes the operators that work with Microsoft .NET Framework types.
 ### [about_Updatable_Help](about_Updatable_Help.md)
 Describes the updatable help system in Windows PowerShell.
 
-### [About_Using](About_Using.md)
-Allows to indicate which namespaces are used in the session.
-
 ### [about_Variables](about_Variables.md)
-Describes how variables store values that can be used in  Windows PowerShell.
+Describes how variables store values that can be used in  Windows PowerShell®.
 
 ### [about_While](about_While.md)
 Describes a language statement that you can use to run a command block based on the results of a conditional test.
@@ -368,19 +355,15 @@ Describes the features and system requirements of Windows PowerShell
 Integrated Scripting Environment (ISE).
 
 ### [about_Windows_RT](about_Windows_RT.md)
-Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1.
+Explains limitations of  Windows PowerShell® 4.0 on Windows RT 8.1.
 
 ### [about_WMI](about_WMI.md)
 Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise.
 
 ### [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
-Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell.
+Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell®.
 
 ### [about_WQL](about_WQL.md)
 Describes WMI Query Language (WQL), which can be
 used to get WMI objects in Windows PowerShell.
-
-### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
-Provides an overview of Web Services for Management (WS-Management) as
-background for using the WS-Management cmdlets in Windows PowerShell.
 

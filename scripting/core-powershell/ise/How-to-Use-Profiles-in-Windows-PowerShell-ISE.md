@@ -2,11 +2,15 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Use Profiles in Windows PowerShell ISE
-ms.assetid:  0219626a-6da5-4acc-b630-d058e8b29cc6
 ---
 
-# How to Use Profiles in Windows PowerShell ISE
-This topic explains how to use Profiles in Windows PowerShell® Integrated Scripting Environment (ISE). We recommend that before performing the tasks in this section, you review [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)), or in the Console Pane, type, `Get-Help about_Profiles` and press **ENTER**.
+# How to Use Profiles in Windows PowerShell ISE This topic explains how to
+use Profiles in Windows PowerShell® Integrated Scripting Environment (ISE).
+We recommend that before performing the tasks in this section, you review
+[about_Profiles
+[v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)),
+or in the Console Pane, type, `Get-Help about_Profiles` and press
+**ENTER**.
 
 A profile is a Windows PowerShell ISE script that runs automatically when you start a new session.  You can create one or more Windows PowerShell profiles for Windows PowerShell ISE and use them to add the configure the Windows PowerShell or Windows PowerShell ISE environment, preparing it for your use, with variables, aliases, functions, and color and font preferences that you want available. A profile affects every Windows PowerShell ISE session that you start.
 
@@ -66,13 +70,13 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 2.  Add some items to your profile. The following are a few examples to get you started:
 
-    -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](#windows-powershell-ise-object-model-reference).
+    -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md).
 
     -   To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
 3.  To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows PowerShell ISE, your customizations are applied.
 
 ## See Also
-- [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
+- [about_Profiles](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_profiles)
 - [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

@@ -10,108 +10,87 @@ Updated: June 24, 2013
 
 Applies To: Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell® Web Access in Windows Server® 2012 R2 and Windows Server® 2012 has a restrictive security model. Users must explicitly be granted access before they can sign in to the Windows PowerShell Web Access gateway and use the web-based Windows PowerShell console.
+Windows PowerShell® Web Access in Windows Server® 2012 R2 and Windows
+Server® 2012 has a restrictive security model. Users must explicitly be
+granted access before they can sign in to the Windows PowerShell Web Access
+gateway and use the web-based Windows PowerShell console.
 
--   [Configuring authorization rules and site security](#BKMK_auth)
+## Configuring authorization rules and site security After Windows
 
--   [Session management](#BKMK_sesmgmt)
+PowerShell Web Access is installed and the gateway is configured, users can
+open the sign-in page in a browser, but they cannot sign in until the
+Windows PowerShell Web Access administrator grants users access explicitly.
+Windows PowerShell Web Access access control is managed by using the set of
+Windows PowerShell cmdlets described in the following table. There is no
+comparable GUI for adding or managing authorization rules. For more
+detailed information about Windows PowerShell Web Access cmdlets, see the
+cmdlet reference topics, [Windows PowerShell Web Access
+Cmdlets](https://technet.microsoft.com/library/hh918342.aspx).
 
+Administrators can define 0-*n* authentication rules for Windows PowerShell
+Web Access. The default security is restrictive rather than permissive;
+zero authentication rules means no users have access to anything.
 
-After Windows PowerShell Web Access is installed and the gateway is configured, users can open the sign-in page in a browser, but they cannot sign in until the Windows PowerShell Web Access administrator grants users access explicitly. Windows PowerShell Web Access access control is managed by using the set of Windows PowerShell cmdlets described in the following table. There is no comparable GUI for adding or managing authorization rules. For more detailed information about Windows PowerShell Web Access cmdlets, see the cmdlet reference topics, [Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx).
-
-Administrators can define 0-*n* authentication rules for Windows PowerShell Web Access. The default security is restrictive rather than permissive; zero authentication rules means no users have access to anything.
-
-Add-PswaAuthorizationRule and Test-PswaAuthorizationRule in Windows Server 2012 R2 include a Credential parameter that allows you to add and test Windows PowerShell Web Access authorization rules from a remote computer, or from within an active Windows PowerShell Web Access session. As with other Windows PowerShell cmdlets that have a Credential parameter, you can specify a PSCredential object as the value of the parameter. To create a PSCredential object that contains credentials you want to pass to a remote computer, run the [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet.
+Add-PswaAuthorizationRule and Test-PswaAuthorizationRule in Windows Server
+2012 R2 include a Credential parameter that allows you to add and test
+Windows PowerShell Web Access authorization rules from a remote computer,
+or from within an active Windows PowerShell Web Access session. As with
+other Windows PowerShell cmdlets that have a Credential parameter, you can
+specify a PSCredential object as the value of the parameter. To create a
+PSCredential object that contains credentials you want to pass to a remote
+computer, run the
+[Get-Credential](https://technet.microsoft.com/library/hh849815.aspx)
+cmdlet.
 
 Windows PowerShell Web Access authentication rules are whitelist rules. Each rule is a definition of an allowed connection between users, target computers, and particular Windows PowerShell [session configurations](https://technet.microsoft.com/library/dd819508.aspx) (also referred to as endpoints or runspaces) on specified target computers.
 
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Security Note </span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>A user needs only one rule to be true to get access. If a user is given access to one computer with either full language access or access only to Windows PowerShell remote management cmdlets, from the web-based console, the user can log on (or hop) to other computers that are connected to the first target computer. The most secure way to configure Windows PowerShell Web Access is to allow users access only to constrained session configurations (also called endpoints or runspaces) that allow them to accomplish specific tasks that they normally need to perform remotely.</p></td>
-</tr>
-</tbody>
-</table>
+> **Security Note**
+>
+> A user needs only one rule to be true to get access. If a user is given
+> access to one computer with either full language access or access only to
+> Windows PowerShell remote management cmdlets, from the web-based console,
+> the user can log on (or hop) to other computers that are connected to the
+> first target computer. The most secure way to configure Windows PowerShell
+> Web Access is to allow users access only to constrained session
+> configurations (also called endpoints or runspaces) that allow them to
+> accomplish specific tasks that they normally need to perform remotely.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>Name</p></th>
-<th><p>Description</p></th>
-<th><p>Parameters</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="https://technet.microsoft.com/library/jj592890.aspx">Add-PswaAuthorizationRule</a></p></td>
-<td><p>Adds a new authorization rule to the Windows PowerShell Web Access authorization rule set.</p></td>
-<td><ul>
-<li><p>ComputerGroupName</p></li>
-<li><p>ComputerName</p></li>
-<li><p>ConfigurationName</p></li>
-<li><p>RuleName</p></li>
-<li><p>UserGroupName</p></li>
-<li><p>UserName</p></li>
-<li><p>Credential (Windows Server 2012 R2 and later)</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://technet.microsoft.com/library/jj592893.aspx">Remove-PswaAuthorizationRule</a></p></td>
-<td><p>Removes a specified authorization rule from Windows PowerShell Web Access.</p></td>
-<td><ul>
-<li><p>Id</p></li>
-<li><p>RuleName</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p><a href="https://technet.microsoft.com/library/jj592891.aspx">Get-PswaAuthorizationRule</a></p></td>
-<td><p>Returns a set of Windows PowerShell Web Access authorization rules. When it is used without parameters, the cmdlet returns all rules.</p></td>
-<td><ul>
-<li><p>Id</p></li>
-<li><p>RuleName</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><a href="https://technet.microsoft.com/library/jj592892.aspx">Test-PswaAuthorizationRule</a></p></td>
-<td><p>Evaluates authorization rules to determine if a specific user, computer, or session configuration access request is authorized. By default, if no parameters are added, the cmdlet evaluates all authorization rules. By adding parameters, administrators can specify an authorization rule or a subset of rules to test.</p></td>
-<td><ul>
-<li><p>ComputerName</p></li>
-<li><p>ConfigurationName</p></li>
-<li><p>RuleName</p></li>
-<li><p>UserName</p></li>
-<li><p>Credential (Windows Server 2012 R2 and later)</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Name | Description | Parameters
+-- | -- | --
+[Add-PswaAuthorizationRule]() | Adds a new authorization rule<br/>to the Windows PowerShell Web<br/>Access authorization rule set. | - ComputerGroupName<br/>- ComputerName<br/>- ConfigurationName<br/>- RuleName<br/>- UserGroupName<br/>- UserName<br/>- Credential (Windows Server 2012 R2 and later)<br/>
+[Remove-PswaAuthorizationRule]() | Removes a specified authorization<br/>rule from Windows PowerShell Web<br/>Access. | - Id<br/>- RuleName<br/>
+[Get-PswaAuthorizationRule]() | Returns a set of Windows PowerShell<br/>Web Access authorization rules.<br/>When it is used without parameters,<br/>the cmdlet returns all rules. | - Id<br/>- RuleName<br/>
+[Test-PswaAuthorizationRule]() | Evaluates authorization rules to<br/>determine if a specific user, computer,<br/>or session configuration access request<br/>is authorized.<br/>By default, if no parameters are added,<br/>the cmdlet evaluates all authorization<br/>rules.<br/>By adding parameters, administrators can<br/>specify an authorization rule or a subset<br/>of rules to test. | - ComputerName<br/>- ConfigurationName<br/>- RuleName<br/>- UserName<br/>- Credential (Windows Server 2012 R2 and later)<br/>
 
-The preceding cmdlets create a set of access rules which are used to authorize a user on the Windows PowerShell Web Access gateway. The rules are different from the access control lists (ACLs) on the destination computer, and provide an additional layer of security for web access. More details about security are described in the following section.
+The preceding cmdlets create a set of access rules which are used to
+authorize a user on the Windows PowerShell Web Access gateway. The rules
+are different from the access control lists (ACLs) on the destination
+computer, and provide an additional layer of security for web access. More
+details about security are described in the following section.
 
-If users cannot pass any of the preceding security layers, they receive a generic “access denied” message in their browser windows. Although security details are logged on the gateway server, end users are not shown information about how many security layers they passed, or at which layer the sign-in or authentication failure occurred.
+If users cannot pass any of the preceding security layers, they receive a
+generic “access denied” message in their browser windows. Although security
+details are logged on the gateway server, end users are not shown
+information about how many security layers they passed, or at which layer
+the sign-in or authentication failure occurred.
 
-For more information about configuring authorization rules, see [Configuring authorization rules](#BKMK_configrules) in this topic.
+For more information about configuring authorization rules, see
+[Configuring authorization rules]() in this topic.
 
-<a href="" id="BKMK_sec"></a>
-###
+### Security
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Security</span></a>
-
-------------------------------------------------------------------------
-
-The Windows PowerShell Web Access security model has four layers between an end user of the web-based console, and a target computer. Windows PowerShell Web Access administrators can add security layers through additional configuration in the IIS Manager console. For more information about securing websites in the IIS Manager console, see [Configure Web Server Security (IIS 7)](https://technet.microsoft.com/library/cc731278(v=ws.10).aspx). For more information about IIS best practices and preventing denial-of-service attacks, see [Best Practices for Preventing DoS/Denial of Service Attacks](https://technet.microsoft.com/library/cc750213.aspx). An administrator can also buy and install additional, retail authentication software.
+The Windows PowerShell Web Access security model has four layers between an
+end user of the web-based console, and a target computer. Windows
+PowerShell Web Access administrators can add security layers through
+additional configuration in the IIS Manager console. For more information
+about securing websites in the IIS Manager console, see [Configure Web
+Server Security (IIS
+7)](https://technet.microsoft.com/library/cc731278(v=ws.10).aspx). For more
+information about IIS best practices and preventing denial-of-service
+attacks, see [Best Practices for Preventing DoS/Denial of Service
+Attacks](https://technet.microsoft.com/library/cc750213.aspx). An
+administrator can also buy and install additional, retail authentication
+software.
 
 The following table describes the four layers of security between end users and target computers.
 
@@ -160,12 +139,7 @@ The following table describes the four layers of security between end users and 
 </tbody>
 </table>
 
-<a href="" id="BKMK_configrules"></a>
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Configuring authorization rules</span></a>
-
-------------------------------------------------------------------------
+### Configuring authorization rules
 
 Administrators likely want the same authorization rule for Windows PowerShell Web Access users that is already defined in their environment for Windows PowerShell remote management. The first procedure in this section describes how to add a secure authorization rule that grants access to one user, signing in to manage one computer, and within a single session configuration. The second procedure describes how to remove an authorization rule that is no longer needed.
 
@@ -184,7 +158,7 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>For more ways you can use authorization rules to grant access to users and help secure the Windows PowerShell Web Access environment, see <a href="#BKMK_others">Other authorization rule scenario examples</a> in this topic.</p></td>
+<td><p>For more ways you can use authorization rules to grant access to users and help secure the Windows PowerShell Web Access environment, see [Other authorization rule scenario examples]() in this topic.</p></td>
 </tr>
 </tbody>
 </table>
@@ -215,7 +189,7 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
 
 #### To remove an authorization rule
 
-1.  If a Windows PowerShell session is not already open, see step 1 of [To add a restrictive authorization rule](#BKMK_arar) in this section.
+1.  If a Windows PowerShell session is not already open, see step 1 of [To add a restrictive authorization rule]() in this section.
 
 2.  Type the following, and then press **Enter**, where *rule ID* represents the unique ID number of the rule that you want to remove.
 
@@ -241,14 +215,26 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
     </tbody>
     </table>
 
-<a href="" id="BKMK_others"></a>
-####
+### Other authorization rule scenario examples
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Other authorization rule scenario examples</span></a>
-
-------------------------------------------------------------------------
-
-Every Windows PowerShell session uses a session configuration; if one is not specified for a session, Windows PowerShell uses the default, built-in Windows PowerShell session configuration, called Microsoft.PowerShell. The default session configuration includes all cmdlets that are available on a computer. Administrators can restrict access to all computers by defining a session configuration with a restricted runspace (a limited range of cmdlets and tasks that their end users could perform). A user who is granted access to one computer with either full language access or only the Windows PowerShell remote management cmdlets can connect to other computers that are connected to the first computer. Defining a restricted runspace can prevent users from accessing other computers from their allowed Windows PowerShell runspace, and improves the security of your Windows PowerShell Web Access environment. The session configuration can be distributed (by using Group Policy) to all computers that administrators want to make accessible through Windows PowerShell Web Access. For more information about session configurations, see [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). The following are some examples of this scenario.
+Every Windows PowerShell session uses a session configuration; if one is
+not specified for a session, Windows PowerShell uses the default, built-in
+Windows PowerShell session configuration, called Microsoft.PowerShell. The
+default session configuration includes all cmdlets that are available on a
+computer. Administrators can restrict access to all computers by defining a
+session configuration with a restricted runspace (a limited range of
+cmdlets and tasks that their end users could perform). A user who is
+granted access to one computer with either full language access or only the
+Windows PowerShell remote management cmdlets can connect to other computers
+that are connected to the first computer. Defining a restricted runspace
+can prevent users from accessing other computers from their allowed Windows
+PowerShell runspace, and improves the security of your Windows PowerShell
+Web Access environment. The session configuration can be distributed (by
+using Group Policy) to all computers that administrators want to make
+accessible through Windows PowerShell Web Access. For more information
+about session configurations, see
+[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx).
+The following are some examples of this scenario.
 
 -   An administrator creates an endpoint, called **PswaEndpoint**, with a restricted runspace. Then, the administrator creates a rule, **\*,\*,PswaEndpoint**, and distributes the endpoint to other computers. The rule allows all users to access all computers with the endpoint **PswaEndpoint**. If this is the only authorization rule defined in the rule set, computers without that endpoint would not be accessible.
 
@@ -304,34 +290,40 @@ Every Windows PowerShell session uses a session configuration; if one is not spe
     </tbody>
     </table>
 
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Using a single set of authorization rules for multiple sites</span></a>
-
-------------------------------------------------------------------------
+### Using a single set of authorization rules for multiple sites
 
 Authorization rules are stored in an XML file. By default, the path name of the XML file is %windir%\\Web\\PowershellWebAccess\\data\\AuthorizationRules.xml.
 
-The path to the authorization rules XML file is stored in the **powwa.config** file, which is found in %windir%\\Web\\PowershellWebAccess\\data. The administrator has the flexibility to change the reference to the default path in **powwa.config** to suit preferences or requirements. Allowing the administrator to change the location of the file lets multiple Windows PowerShell Web Access gateways use the same authorization rules, if such a configuration is desired.
+The path to the authorization rules XML file is stored in the
+**powwa.config** file, which is found in
+%windir%\\Web\\PowershellWebAccess\\data. The administrator has the
+flexibility to change the reference to the default path in **powwa.config**
+to suit preferences or requirements. Allowing the administrator to change
+the location of the file lets multiple Windows PowerShell Web Access
+gateways use the same authorization rules, if such a configuration is
+desired.
 
-<a href="" id="BKMK_sesmgmt"></a>
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Session management</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
+## Session Management
 
 By default, Windows PowerShell Web Access limits a user to three sessions at one time. You can edit the web application’s **web.config** file in IIS Manager to support a different number of sessions per user. The path to the **web.config** file is $Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config.
 
 By default, Web Server (IIS) is configured to restart the application pool if any settings are edited. For example, the application pool is restarted if changes are made to the **web.config** file. Because Windows PowerShell Web Access uses in-memory session states, users signed in to Windows PowerShell Web Access sessions lose their sessions when the application pool is restarted.
 
-###
+### Setting default parameters on the sign-in page
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Setting default parameters on the sign-in page</span></a>
-
-------------------------------------------------------------------------
-
-If your Windows PowerShell Web Access gateway is running on Windows Server 2012 R2, you can configure default values for the settings that are displayed on the Windows PowerShell Web Access sign-in page. You can configure values in the **web.config** file that is described in the preceding paragraph. Default values for the sign-in page settings are found in the **appSettings** section of the web.config file; the following is an example of the **appSettings** section. Valid values for many of these settings are the same as those for the corresponding parameters of the [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) cmdlet in Windows PowerShell. For example, the <span class="code">defaultApplicationName</span> key, as shown in the following code block, is the value of the **$PSSessionApplicationName** preference variable on the target computer.
+If your Windows PowerShell Web Access gateway is running on Windows Server
+2012 R2, you can configure default values for the settings that are
+displayed on the Windows PowerShell Web Access sign-in page. You can
+configure values in the **web.config** file that is described in the
+preceding paragraph. Default values for the sign-in page settings are found
+in the **appSettings** section of the web.config file; the following is an
+example of the **appSettings** section. Valid values for many of these
+settings are the same as those for the corresponding parameters of the
+[New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) cmdlet
+in Windows PowerShell. For example, the <span
+class="code">defaultApplicationName</span> key, as shown in the following
+code block, is the value of the **$PSSessionApplicationName** preference
+variable on the target computer.
 
 [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6ccfd0a1-485a-4ac5-9636-89ebab501bef'); "Copy to clipboard.")
 
@@ -346,77 +338,34 @@ If your Windows PowerShell Web Access gateway is running on Windows Server 2012 
             <add key="defaultConfigurationName" value="Microsoft.PowerShell"/>
     </appSettings>
 
-###
+### Time-outs and unplanned disconnections
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Time-outs and unplanned disconnections</span></a>
+Windows PowerShell Web Access sessions time out. In Windows PowerShell Web
+Access running on Windows Server 2012, A time-out message is displayed to
+signed-in users after 15 minutes of session inactivity. If the user does
+not respond within five minutes after the time-out message is displayed,
+the session is ended, and the user is signed out. You can change time-out
+periods for sessions in the website settings in IIS Manager.
 
-------------------------------------------------------------------------
+In Windows PowerShell Web Access running on Windows Server 2012 R2,
+sessions time out, by default, after 20 minutes of inactivity. If users are
+disconnected from sessions in the web-based console because of network
+errors or other unplanned shutdowns or failures, and not because they have
+closed the sessions themselves, the Windows PowerShell Web Access sessions
+continue to run, connected to target computers, until the time-out period
+on the client side lapses. The session is disconnected after either the
+default 20 minutes, or after the time-out period specified by the gateway
+administrator, whichever is shorter.
 
-Windows PowerShell Web Access sessions time out. In Windows PowerShell Web Access running on Windows Server 2012, A time-out message is displayed to signed-in users after 15 minutes of session inactivity. If the user does not respond within five minutes after the time-out message is displayed, the session is ended, and the user is signed out. You can change time-out periods for sessions in the website settings in IIS Manager.
+If the gateway server is running Windows Server 2012 R2, Windows PowerShell
+Web Access lets users reconnect to saved sessions at a later time, but when
+network errors, unplanned shutdowns, or other failures disconnect sessions,
+users cannot see or reconnect to saved sessions until after the time-out
+period specified by the gateway administrator has lapsed.
 
-In Windows PowerShell Web Access running on Windows Server 2012 R2, sessions time out, by default, after 20 minutes of inactivity. If users are disconnected from sessions in the web-based console because of network errors or other unplanned shutdowns or failures, and not because they have closed the sessions themselves, the Windows PowerShell Web Access sessions continue to run, connected to target computers, until the time-out period on the client side lapses. The session is disconnected after either the default 20 minutes, or after the time-out period specified by the gateway administrator, whichever is shorter.
+## See Also
 
-If the gateway server is running Windows Server 2012 R2, Windows PowerShell Web Access lets users reconnect to saved sessions at a later time, but when network errors, unplanned shutdowns, or other failures disconnect sessions, users cannot see or reconnect to saved sessions until after the time-out period specified by the gateway administrator has lapsed.
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">See Also</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
-
-[Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
-[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
-
-<span>Show:</span> Inherited Protected
-
-<span class="stdr-votetitle">Was this page helpful?</span>
-Yes
-No
-
-Additional feedback?
-
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
-Submit
-Skip this
-
-<span class="stdr-thankyou">Thank you!</span> <span class="stdr-appreciate">We appreciate your feedback.</span>
-
-[Manage Your Profile](https://social.technet.microsoft.com/profile)
-
-|
-
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Site Feedback</a>
-Site Feedback
-
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
-
-Tell us about your experience...
-
-Did the page load quickly?
-
-<span> Yes<span> </span></span> <span> No<span> </span></span>
-
-Do you like the page design?
-
-<span> Yes<span> </span></span> <span> No<span> </span></span>
-
-Tell us more
-
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
--   |
--   [Contact Us](https://technet.microsoft.com/cc512759.aspx)
--   |
--   [Privacy Statement](https://privacy.microsoft.com/privacystatement)
--   |
--   [Terms of Use](https://technet.microsoft.com/cc300389.aspx)
--   |
--   [Trademarks](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
--   |
-
-© 2016 Microsoft
-
-© 2016 Microsoft
-
-Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft. See ASP.NET Ajax CDN Terms of Use - http://www.asp.net/ajaxlibrary/CDN.ashx.
-<img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+* [Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+* [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+* [Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
 
