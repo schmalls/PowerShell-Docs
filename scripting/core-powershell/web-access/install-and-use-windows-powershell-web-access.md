@@ -157,9 +157,23 @@ Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_
 
   >**Note**
   >
-  >Installing Windows PowerShell Web Access by using Windows PowerShell cmdlets does not add Web Server (IIS) management tools by default. If you want to install the management tools on the same server as the Windows PowerShell Web Access gateway, add the `IncludeManagementTools` parameter to the installation command (as provided in this step). If you are managing the Windows PowerShell Web Access website from a remote computer, install the IIS Manager snap-in by installing [Remote Server Administration Tools for Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) or [Remote Server Administration Tools for Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) on the computer from which you want to manage the gateway.
+  >Installing Windows PowerShell Web Access by using Windows PowerShell
+  >cmdlets does not add Web Server (IIS) management tools by default. If you
+  >want to install the management tools on the same server as the Windows
+  >PowerShell Web Access gateway, add the `-IncludeManagementTools` parameter
+  >to the installation command (as provided in this step). If you are managing
+  >the Windows PowerShell Web Access website from a remote computer, install
+  >the IIS Manager snap-in by installing
+  >[Remote Server Administration Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145)
+  >or [Remote Server Administration Tools for Windows
+8](http://go.microsoft.com/fwlink/p/?LinkID=238560)
+  >on the computer from which you want to manage the gateway.
   >
-  >To install roles and features on an offline VHD, you must add both the <span class="code">ComputerName</span> parameter and the <span class="code">VHD</span> parameter. The <span class="code">ComputerName</span> parameter contains the name of the server on which to mount the VHD, and the <span class="code">VHD</span> parameter contains the path to the VHD file on the specified server.
+  >To install roles and features on an offline VHD, you must add both the
+  >`-ComputerName` parameter and the `-VHD` parameter.
+  >The `-ComputerName` parameter contains the name of the server
+  >on which to mount the VHD, and the `-VHD` parameter
+  >contains the path to the VHD file on the specified server.
 
 ```powershell
         Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
