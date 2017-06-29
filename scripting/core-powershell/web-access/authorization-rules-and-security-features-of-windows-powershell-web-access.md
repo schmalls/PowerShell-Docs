@@ -348,17 +348,23 @@ administrator adds the following rule.
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-The preceding rule example authenticates Chris on the gateway server, and then authorizes his access to *srv1*. On the sign-in page, Chris must provide a second set of credentials in the **Optional connection settings** area (*contoso\\chris*). The gateway server uses the additional set of credentials to authenticate him on the target computer, *srv1.contoso.com*.
+The preceding rule example authenticates Chris on the gateway server, and
+then authorizes his access to *srv1*. On the sign-in page, Chris must
+provide a second set of credentials in the **Optional connection settings**
+area (*contoso\\chris*). The gateway server uses the additional set of
+credentials to authenticate him on the target computer, *srv1.contoso.com*.
 
-In the preceding scenario, Windows PowerShell Web Access establishes a successful connection to the target computer only after the following have been successful, and allowed by at least one authorization rule.
+In the preceding scenario, Windows PowerShell Web Access establishes a
+successful connection to the target computer only after the following have
+been successful, and allowed by at least one authorization rule.
 
-  1. Authentication on the workgroup gateway server by adding a user name in the format *server_name*\\*user_name* to the authorization rule
+1. Authentication on the workgroup gateway server by adding a user name in the format *server_name*\\*user_name* to the authorization rule
 
-  2. Authentication on the target computer by using alternate credentials provided on the sign-in page, in the **Optional connection settings** area
+2. Authentication on the target computer by using alternate credentials provided on the sign-in page, in the **Optional connection settings** area
 
   >**Note**:
->
->If gateway and target computers are in different workgroups or domains, a
+  >
+  >If gateway and target computers are in different workgroups or domains, a
 trust relationship must be established between the two workgroup computers,
 the two domains, or between the workgroup and the domain. This relationship
 cannot be configured by using Windows PowerShell Web Access authorization
@@ -457,4 +463,4 @@ period specified by the gateway administrator has lapsed.
 
 - [Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
-- [Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
+- [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)

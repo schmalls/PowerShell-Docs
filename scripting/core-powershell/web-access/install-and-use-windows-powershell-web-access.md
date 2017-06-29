@@ -35,9 +35,9 @@ Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1. Installing Windows PowerShell Web Access
-2. Configuring the gateway
-3. Configuring authorization rules that allow users access to the web-based Windows PowerShell console
+1. [Install Windows PowerShell Web Access](#Installing-Windows-PowerShell-Web-Access)
+2. [Configuring the gateway]()
+3. [Configuring authorization rules]() that allow users access to the web-based Windows PowerShell console
 
 Before you install and configure Windows PowerShell Web Access, we
 recommend that you read this entire guide, which includes instructions
@@ -46,10 +46,10 @@ The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com
 topic describes how users sign in to the web-based console, and covers
 limitations and differences between the web-based Windows PowerShell
 console and the **powershell.exe** console. End users of the web-based
-console should read [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx),
+console should read [Use the Web based Windows PowerShell Console](),
 but do not need to read the rest of this guide.
 
-This topic does not provide in-depth Web Server (IIS) operations guidance;
+This topic does not provide in-depth IIS Web Server operations guidance;
 only those steps required to configure the Windows PowerShell Web Access
 gateway are described in this topic. For more information about configuring
 and securing websites in IIS, see the IIS documentation resources in the
@@ -61,11 +61,11 @@ The following diagram shows how Windows PowerShell Web Access works.
 
 In this topic:
 
-- [Requirements for running Windows PowerShell Web Access]()
-- [Browser and client device support]()
-- [Recommended (quick) deployment]()
-- [Custom deployment]()
-- [Configure a genuine certificate]()
+- [Requirements for running Windows PowerShell Web Access](#Requirements-for-running-Windows-PowerShell-Web-Access)
+- [Browser and client device support](#Browser-and-client-device-support)
+- [Recommended quick deployment](#Recommended-quick-deployment)
+- [Custom deployment](#Custom-deployment)
+- [Configure a genuine certificate](#Configure-a-genuine-certificate)
 
 ## Requirements for running Windows PowerShell Web Access
 
@@ -98,23 +98,16 @@ Windows PowerShell Web Access supports the following Internet browsers. Although
 ### Supported desktop computer browsers
 
 - Windows® Internet Explorer® for Microsoft Windows® 8.0, 9.0, 10.0, and 11.0
-
 - Mozilla Firefox® 10.0.2
-
 - Google Chrome™ 17.0.963.56m for Windows
-
 - Apple Safari® 5.1.2 for Windows
-
 - Apple Safari 5.1.2 for Mac OS®
 
 ### Minimally-tested mobile devices or browsers
 
 - Windows Phone 7 and 7.5
-
 - Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
-
 - Apple Safari for iPhone operating system 5.0.1
-
 - Apple Safari for iPad 2 operating system 5.0.1
 
 ### Browser requirements
@@ -125,7 +118,7 @@ To use the Windows PowerShell Web Access web-based console, browsers must do the
 - Be able to open and read HTTPS pages.
 - Open and run websites that use JavaScript.
 
-## Recommended (quick) deployment
+## Recommended quick deployment
 
 You can install the Windows PowerShell Web Access gateway on a server that
 is running Windows Server 2012 R2 or Windows Server 2012 by using either
@@ -134,7 +127,7 @@ that is opened from within Server Manager. For quick installation and
 configuration, use Windows PowerShell cmdlets, as described in this
 section.
 
-- [Step 1: Install Windows PowerShell Web Access]()
+- [Step 1: Install Windows PowerShell Web Access](#Install-Windows-PowerShell-Web-Access)
 - [Step 2: Configure the gateway]()
 - [Step 3: Configure a restrictive authorization rule]()
 
@@ -362,21 +355,15 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 After you have configured an authorization rule, you are ready for authorized users to sign in to the web-based console and begin using Windows PowerShell Web Access.
 
-<a href="" id="BKMK_custom"></a>
+## Custom deployment
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Custom deployment</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+You can install the Windows PowerShell Web Access gateway on a server that
+is running Windows Server 2012 R2 or Windows Server 2012 by using the Add
+Roles and Features Wizard in Server Manager. After Windows PowerShell Web
+Access is installed, you can customize the configuration of the gateway in
+IIS Manager.
 
-------------------------------------------------------------------------
-
-You can install the Windows PowerShell Web Access gateway on a server that is running Windows Server 2012 R2 or Windows Server 2012 by using the Add Roles and Features Wizard in Server Manager. After Windows PowerShell Web Access is installed, you can customize the configuration of the gateway in IIS Manager.
-
-<a href="" id="BKMK_custom1"></a>
-###
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Step 1: Install Windows PowerShell Web Access</span></a>
-
-------------------------------------------------------------------------
+### Install Windows PowerShell Web Access
 
 #### To install Windows PowerShell Web Access by using the Add Roles and Features Wizard
 
@@ -596,12 +583,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 After you have configured an authorization rule, you are ready for authorized users to sign in to the web-based console and begin using Windows PowerShell Web Access.
 
-<a href="" id="BKMK_configcert"></a>
-
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Configure a genuine certificate</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
-
-------------------------------------------------------------------------
+## Configure a genuine certificate
 
 For a secure production environment, always use a valid SSL certificate that has been signed by a certification authority (CA). The procedure in this section describes how to obtain and apply a valid SSL certificate from a CA.
 
