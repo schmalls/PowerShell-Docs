@@ -610,9 +610,9 @@ To get help for a different locale, use Region and Language in Control Panel to 
 
 [about_Command_Syntax](http://technet.microsoft.com/library/hh847867.aspx)
 
-[Get-Command]()
+[Get-Command](Get-Command.md)
 
-[about_Comment_Based_Help]()
+[about_Comment_Based_Help](..\About\about_Comment_Based_Help.md)
 
-[about_Parameters]()
+[about_Parameters](..\About\about_Parameters.md)
 

@@ -488,19 +488,19 @@ This cmdlet returns one or more CIM instance objects representing a snapshot of 
 
 ## RELATED LINKS
 
-[Format-Table]()
+[Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
 
 [Get-CimAssociatedInstance" Get-CimAssociatedInstance]()
 
 [Get-CimClass" Get-CimClass]()
 
-[Invoke-CimMethod]()
+[Invoke-CimMethod](Invoke-CimMethod.md)
 
-[New-CimInstance]()
+[New-CimInstance](New-CimInstance.md)
 
 [Register-CimIndicationEvent" Register-CimIndicationEvent]()
 
-[Remove-CimInstance]()
+[Remove-CimInstance](Remove-CimInstance.md)
 
-[Set-CimInstance]()
+[Set-CimInstance](Set-CimInstance.md)
 

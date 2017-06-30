@@ -468,13 +468,13 @@ This cmdlet returns an object that contains CIM session options information.
 
 ## RELATED LINKS
 
-[Get-ChildItem]()
+[Get-ChildItem](..\Microsoft.PowerShell.Management\Get-ChildItem.md)
 
-[Get-Credential]()
+[Get-Credential](..\Microsoft.PowerShell.Security\Get-Credential.md)
 
-[Get-Culture]()
+[Get-Culture](..\Microsoft.PowerShell.Utility\Get-Culture.md)
 
-[Get-Item]()
+[Get-Item](..\Microsoft.PowerShell.Management\Get-Item.md)
 
-[New-CimSession]()
+[New-CimSession](New-CimSession.md)
 

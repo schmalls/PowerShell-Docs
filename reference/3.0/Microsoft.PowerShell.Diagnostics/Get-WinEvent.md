@@ -591,5 +591,5 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 [Get-EventLog](../Microsoft.PowerShell.Management/Get-EventLog.md)
 
-[about_EventLogs]()
+[about_EventLogs](..\Microsoft.PowerShell.Core\About\about_Eventlogs.md)
 

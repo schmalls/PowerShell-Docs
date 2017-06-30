@@ -1,5 +1,5 @@
 #  [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core.md)
-##  [About]()
+##  [About](About\About.md)
 ###  [about_Aliases](about/about_aliases.md)
 ###  [about_Arithmetic_Operators](about/about_arithmetic_operators.md)
 ###  [about_Arrays](about/about_arrays.md)

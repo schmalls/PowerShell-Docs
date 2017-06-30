@@ -239,9 +239,9 @@ Accept wildcard characters: True
 
 ## RELATED LINKS
 
-[Format-Table]()
+[Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
 
-[New-CimSession]()
+[New-CimSession](New-CimSession.md)
 
-[Remove-CimSession]()
+[Remove-CimSession](Remove-CimSession.md)
 

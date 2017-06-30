@@ -46,7 +46,7 @@ The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com
 topic describes how users sign in to the web-based console, and covers
 limitations and differences between the web-based Windows PowerShell
 console and the **powershell.exe** console. End users of the web-based
-console should read [Use the Web based Windows PowerShell Console](),
+console should read [Use the Web based Windows PowerShell Console](use-the-web-based-windows-powershell-console.md),
 but do not need to read the rest of this guide.
 
 This topic does not provide in-depth IIS Web Server operations guidance;

@@ -352,15 +352,15 @@ This cmdlet outputs a PS EventSubscription object.
 
 ## RELATED LINKS
 
-[Get-Event]()
+[Get-Event](..\Microsoft.PowerShell.Utility\Get-Event.md)
 
-[Remove-Event]()
+[Remove-Event](..\Microsoft.PowerShell.Utility\Remove-Event.md)
 
-[Unregister-Event]()
+[Unregister-Event](..\Microsoft.PowerShell.Utility\Unregister-Event.md)
 
-[Write-Host]()
+[Write-Host](..\Microsoft.PowerShell.Utility\Write-Host.md)
 
-[Get-CimSession]()
+[Get-CimSession](Get-CimSession.md)
 
-[New-CimSession]()
+[New-CimSession](New-CimSession.md)
 

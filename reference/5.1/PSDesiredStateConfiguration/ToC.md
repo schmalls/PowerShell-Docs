@@ -1,5 +1,5 @@
 #  [PSDesiredStateConfiguration](PSDesiredStateConfiguration.md)
-##  [About]()
+##  [About](..\Microsoft.PowerShell.Core\About\About.md)
 ###  [about_Classes_and_DSC](about/about_classes_and_dsc.md)
 ##  [Disable-DscDebug](disable-dscdebug.md)
 ##  [Enable-DscDebug](enable-dscdebug.md)

@@ -457,11 +457,11 @@ This cmdlet returns an object.
 
 ## RELATED LINKS
 
-[Get-CimClass]()
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance]()
+[Get-CimInstance](Get-CimInstance.md)
 
-[Get-CimSession]()
+[Get-CimSession](Get-CimSession.md)
 
-[New-CimSession]()
+[New-CimSession](New-CimSession.md)
 

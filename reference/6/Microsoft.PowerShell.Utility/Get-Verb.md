@@ -172,5 +172,5 @@ These cmdlets are considered to be historic exceptions and their verbs are class
 
 ## RELATED LINKS
 
-[Import-Module]()
+[Import-Module](..\Microsoft.PowerShell.Core\Import-Module.md)
 

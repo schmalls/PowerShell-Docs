@@ -1,4 +1,4 @@
-#  [About]()
+#  [About](..\..\Microsoft.PowerShell.Core\About\About.md)
 ##  [about_ActivityCommonParameters](about_activitycommonparameters.md)
 ##  [about_Checkpoint-Workflow](about_checkpoint-workflow.md)
 ##  [about_Foreach-Parallel](about_foreach-parallel.md)

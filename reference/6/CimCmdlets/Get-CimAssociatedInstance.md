@@ -289,7 +289,7 @@ This cmdlet returns an object.
 
 ## RELATED LINKS
 
-[Get-CimClass]()
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance]()
+[Get-CimInstance](Get-CimInstance.md)
 
