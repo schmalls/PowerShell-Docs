@@ -35,9 +35,9 @@ Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1. [Install Windows PowerShell Web Access](#Installing-Windows-PowerShell-Web-Access)
-2. [Configure the gateway](#Configure-the-gateway)
-3. [Configure authorization rules](#Configure-authorization-rules) that allow users access to the web-based Windows PowerShell console
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
+2. [Configure the gateway](#configure-the-gateway)
+3. [Configure authorization rules](#configure-a-restrictive-authorization-rule) that allow users access to the web-based Windows PowerShell console
 
 Before you install and configure Windows PowerShell Web Access, we
 recommend that you read this entire guide, which includes instructions
@@ -61,11 +61,11 @@ The following diagram shows how Windows PowerShell Web Access works.
 
 In this topic:
 
-- [Requirements for running Windows PowerShell Web Access](#Requirements-for-running-Windows-PowerShell-Web-Access)
-- [Browser and client device support](#Browser-and-client-device-support)
-- [Recommended quick deployment](#Recommended-quick-deployment)
-- [Custom deployment](#Custom-deployment)
-- [Configure a genuine certificate](#Configure-a-genuine-certificate)
+- [Requirements for running Windows PowerShell Web Access](#requirements-for-running-windows-powershell-web-access)
+- [Browser and client device support](#browser-and-client-device-support)
+- [Recommended quick deployment](#recommended-quick-deployment)
+- [Custom deployment](#custom-deployment)
+- [Configure a genuine certificate](#configure-a-genuine-certificate)
 
 ## Requirements for running Windows PowerShell Web Access
 
@@ -131,9 +131,9 @@ that is opened from within Server Manager. For quick installation and
 configuration, use Windows PowerShell cmdlets, as described in this
 section.
 
-- [Step 1: Install Windows PowerShell Web Access](#Install-Windows-PowerShell-Web-Access)
-- [Step 2: Configure the gateway](#Configure-the-gateway)
-- [Step 3: Configure a restrictive authorization rule](#Configure-a-restrictive-authorization-rule)
+- [Step 1: Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
+- [Step 2: Configure the gateway](#configure-the-gateway)
+- [Step 3: Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
 ### Install Windows PowerShell Web Access
 
@@ -278,7 +278,7 @@ https://&lt;*server_name*&gt;/myWebApp.
 >You cannot sign in until users have
 been granted access to the website by adding authorization rules. For more
 information, see 
-[Configure a restrictive authorization rule](#Configure-a-restrictive-authorization-rule) 
+[Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule) 
 and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
 #### To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager
@@ -341,7 +341,7 @@ obtain a certificate.
 > 
 >You cannot sign in until users have been granted access to the website 
 >by adding authorization rules. 
->For more information, see [Configure a restrictive authorization rule](#Configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
+>For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
 ### Configure a restrictive authorization rule
 
