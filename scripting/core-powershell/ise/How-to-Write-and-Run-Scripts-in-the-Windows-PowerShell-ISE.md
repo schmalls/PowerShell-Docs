@@ -8,11 +8,11 @@ ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 # How to Write and Run Scripts in the Windows PowerShell ISE
 This topic describes how to create, edit, run, and save scripts in the Script Pane.
 
--   [How to create and run scripts](#bkmk_1)
+-   [how to create and run scripts](#bkmk_1)
 
--   [How to write and edit text in the Script Pane](#bkmk_2)
+-   [how to write and edit text in the script pane](#bkmk_2)
 
--   [How to save a script](#bkmk_3)
+-   [how to save a script](#bkmk_3)
 
 ## <a name="bkmk_1"></a>How to create and run scripts
 You can open and edit Windows PowerShell® files in the Script Pane. Specific file types of interest in Windows PowerShell® are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
@@ -116,7 +116,7 @@ Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File**
 4.  Click **Save**.
 
 ### To save a script in ASCII encoding
-By default, Windows PowerShell ISE saves new script files (.ps1), script data files (.psd1), and script module files (.psm1) as Unicode (BigEndianUnicode) by default. To save a script in another encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) object.
+By default, Windows PowerShell ISE saves new script files (.ps1), script data files (.psd1), and script module files (.psm1) as Unicode (BigEndianUnicode) by default. To save a script in another encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psise.currentfile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#currentfile) object.
 
 The following command saves a new script as MyScript.ps1 with ASCII encoding.
 

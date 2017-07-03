@@ -17,13 +17,13 @@ To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterpr
 
 ## In this topic
 
--   [Windows PowerShell 4.0 DSC updates in KB 3000850](#BKMK_3000850)
+-   [windows powershell 4.0 dsc updates in kb 3000850](#bkmk_3000850)
 
--   [New features in Windows PowerShell 5.0](#BKMK_new50)
+-   [new features in windows powershell 5.0](#bkmk_new50)
 
--   [New features in Windows PowerShell 4.0](#BKMK_wps4)
+-   [new features in windows powershell 4.0](#bkmk_wps4)
 
--   [New features in Windows PowerShell 3.0](#BKMK_wps3)
+-   [new features in windows powershell 3.0](#bkmk_wps3)
 
 ## <a name="BKMK_3000850"></a>Windows PowerShell 4.0 updates in November 2014 update rollup (KB 3000850)
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows PowerShell 4.0 are available in the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). You can determine if KB 3000850 is installed on your system by running `Get-Hotfix -Id KB3000850` in Windows PowerShell.
@@ -124,15 +124,15 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 ## <a name="BKMK_new50"></a>New features in Windows PowerShell 5.0
 
--   [New features in Windows PowerShell](#BKMK_newcore)
+-   [new features in windows powershell](#bkmk_newcore)
 
--   [New features in Windows PowerShell Desired State Configuration](#BKMK_newDSC)
+-   [new features in windows powershell desired state configuration](#bkmk_newdsc)
 
--   [New features in Windows PowerShell ISE](#BKMK_newISE)
+-   [new features in windows powershell ise](#bkmk_newise)
 
--   [New features in Windows PowerShell Web Services](#BKMK_newOData)
+-   [new features in windows powershell web services](#bkmk_newodata)
 
--   [Notable bug fixes in Windows PowerShell 5.0](#BKMK_5bugfix)
+-   [notable bug fixes in windows powershell 5.0](#bkmk_5bugfix)
 
 ### <a name="BKMK_newcore"></a>New features in Windows PowerShell
 
@@ -309,17 +309,17 @@ Windows PowerShell 4.0 is backward-compatible. Cmdlets, providers, modules, snap
 
 Windows PowerShell 4.0 is installed by default on Windows® 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
 
--   [New features in Windows PowerShell](#BKMK_core)
+-   [new features in windows powershell](#bkmk_core)
 
--   [New features in Windows PowerShell Integrated Scripting Environment (ISE)](#BKMK_ise)
+-   [new features in windows powershell integrated scripting environment (ise)](#bkmk_ise)
 
--   [New features in Windows PowerShell Workflow](#BKMK_workflow)
+-   [new features in windows powershell workflow](#bkmk_workflow)
 
--   [New features in Windows PowerShell Web Services](#BKMK_psws)
+-   [new features in windows powershell web services](#bkmk_psws)
 
--   [New features in Windows PowerShell Web Access](#BKMK_powwa)
+-   [new features in windows powershell web access](#bkmk_powwa)
 
--   [Notable bug fixes in Windows PowerShell 4.0](#BKMK_bugs)
+-   [notable bug fixes in windows powershell 4.0](#bkmk_bugs)
 
 Windows PowerShell 4.0 includes the following new features.
 
@@ -452,59 +452,59 @@ Windows PowerShell 4.0 includes the following new features.
 ## <a name="BKMK_wps3"></a>New features in Windows PowerShell 3.0
 Windows PowerShell 3.0 includes the following new features.
 
--   [Windows PowerShell Workflow](#BKMK_Workflow)
+-   [windows powershell workflow](#bkmk_workflow)
 
--   [Windows PowerShell Web Access](#BKMK_WebAccess)
+-   [windows powershell web access](#bkmk_webaccess)
 
--   [New Windows PowerShell ISE Features](#BKMK_ISE)
+-   [new windows powershell ise features](#bkmk_ise)
 
--   [Support for Microsoft .NET Framework 4.0](#BKMK_NET4)
+-   [support for microsoft .net framework 4.0](#bkmk_net4)
 
--   [Support for Windows Preinstallation Environment](#BKMK_WinPE)
+-   [support for windows preinstallation environment](#bkmk_winpe)
 
--   [Disconnected Sessions](#BKMK_Disconnected)
+-   [disconnected sessions](#bkmk_disconnected)
 
--   [Robust Session Connectivity](#BKMK_Robust)
+-   [robust session connectivity](#bkmk_robust)
 
--   [Updatable Help System](#BKMK_UpHelp)
+-   [updatable help system](#bkmk_uphelp)
 
--   [Enhanced Online Help](#BKMK_Online)
+-   [enhanced online help](#bkmk_online)
 
--   [CIM integration](#BKMK_CIM)
+-   [cim integration](#bkmk_cim)
 
--   [Session Configuration Files](#BKMK_ConfigFile)
+-   [session configuration files](#bkmk_configfile)
 
--   [Scheduled Jobs and Task Scheduler Integration](#BKMK_ScheduledJob)
+-   [scheduled jobs and task scheduler integration](#bkmk_scheduledjob)
 
--   [Windows PowerShell Language Enhancements](#BKMK_Lang)
+-   [windows powershell language enhancements](#bkmk_lang)
 
--   [New Core Cmdlets](#BKMK_Core)
+-   [new core cmdlets](#bkmk_core)
 
--   [Improvements to Existing Core Cmdlets and Providers](#BKMK_Prov)
+-   [improvements to existing core cmdlets and providers](#bkmk_prov)
 
--   [Remote module import and discovery](#BKMK_REM)
+-   [remote module import and discovery](#bkmk_rem)
 
--   [Enhanced Tab Completion](#BKMK_TAB)
+-   [enhanced tab completion](#bkmk_tab)
 
--   [Module Auto-Loading](#BKMK_AutoLoad)
+-   [module auto-loading](#bkmk_autoload)
 
--   [Module Experience Improvements](#BKMK_MOD)
+-   [module experience improvements](#bkmk_mod)
 
--   [Simplified Command Discovery](#BKMK_SIMPLE)
+-   [simplified command discovery](#bkmk_simple)
 
--   [Improved Logging, Diagnostics, and Group Policy Support](#BKMK_LOG)
+-   [improved logging, diagnostics, and group policy support](#bkmk_log)
 
--   [Formatting and Output Improvements](#BKMK_OUT)
+-   [formatting and output improvements](#bkmk_out)
 
--   [Enhanced Console Host Experience](#BKMK_HOST)
+-   [enhanced console host experience](#bkmk_host)
 
--   [New Cmdlet and Hosting APIs](#BKMK_API)
+-   [new cmdlet and hosting apis](#bkmk_api)
 
--   [Performance Improvements](#BKMK_PERF)
+-   [performance improvements](#bkmk_perf)
 
--   [RunAs and Shared Host Support](#BKMK_RUNAS)
+-   [runas and shared host support](#bkmk_runas)
 
--   [Special Character Handling Improvements](#BKMK_CHAR)
+-   [special character handling improvements](#bkmk_char)
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell Workflow
 Windows PowerShell® Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.

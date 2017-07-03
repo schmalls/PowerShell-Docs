@@ -87,7 +87,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ###  <a name="CanExecute"></a> CanInvoke
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only Boolean property that returns a **$true** value if a script can be invoked with the [Invoke( Script )](#invoke) method.
+ The read-only Boolean property that returns a **$true** value if a script can be invoked with the [invoke( script )](#invoke) method.
 
 ```
 # CanInvoke will be false if the PowerShell

@@ -836,7 +836,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 </div>
 
 <span class="localeContainer"> </span>
-[United States (English)](# "Change your language")
+[united states (english)](# "change your language")
 <div id="Fragment_BottomLinks" data-fragmentname="BottomLinks"
 xmlns="http://www.w3.org/1999/xhtml">
 

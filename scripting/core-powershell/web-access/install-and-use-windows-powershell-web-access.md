@@ -35,9 +35,9 @@ Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
-2. [Configure the gateway](#configure-the-gateway)
-3. [Configure authorization rules](#configure-a-restrictive-authorization-rule) that allow users access to the web-based Windows PowerShell console
+1. [install windows powershell web access](#install-windows-powershell-web-access)
+2. [configure the gateway](#configure-the-gateway)
+3. [configure authorization rules](#configure-a-restrictive-authorization-rule) that allow users access to the web-based Windows PowerShell console
 
 Before you install and configure Windows PowerShell Web Access, we
 recommend that you read this entire guide, which includes instructions
@@ -61,11 +61,11 @@ The following diagram shows how Windows PowerShell Web Access works.
 
 In this topic:
 
-- [Requirements for running Windows PowerShell Web Access](#requirements-for-running-windows-powershell-web-access)
-- [Browser and client device support](#browser-and-client-device-support)
-- [Recommended quick deployment](#recommended-quick-deployment)
-- [Custom deployment](#custom-deployment)
-- [Configure a genuine certificate](#configure-a-genuine-certificate)
+- [requirements for running windows powershell web access](#requirements-for-running-windows-powershell-web-access)
+- [browser and client device support](#browser-and-client-device-support)
+- [recommended quick deployment](#recommended-quick-deployment)
+- [custom deployment](#custom-deployment)
+- [configure a genuine certificate](#configure-a-genuine-certificate)
 
 ## Requirements for running Windows PowerShell Web Access
 
@@ -131,9 +131,9 @@ that is opened from within Server Manager. For quick installation and
 configuration, use Windows PowerShell cmdlets, as described in this
 section.
 
-- [Step 1: Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
-- [Step 2: Configure the gateway](#configure-the-gateway)
-- [Step 3: Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
+- [step 1: install windows powershell web access](#install-windows-powershell-web-access)
+- [step 2: configure the gateway](#configure-the-gateway)
+- [step 3: configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
 ### Install Windows PowerShell Web Access
 
@@ -200,7 +200,7 @@ also view the readme file for Windows PowerShell Web Access.
 4. After Windows PowerShell Web Access is installed, you are prompted to
 review the readme file, which contains basic, required setup instructions
 for the gateway. These setup instructions are also in the following
-section, [Step 2: Configure the gateway](#Configure-the-gateway). The path
+section, [step 2: configure the gateway](#configure-the-gateway). The path
 to the readme file is
 **C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt**.
 
@@ -230,7 +230,7 @@ or the Secure Sockets Layer (SSL) certificate.
 >We strongly recommend that administrators configure
 the gateway to use a valid certificate that has been signed by a CA. 
  
-- [To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication](#To-configure-the-Windows-PowerShell-Web-Access-gateway-with-a-test-certificate-by-using-Install-PswaWebApplication)
+- [to configure the windows powershell web access gateway with a test certificate by using install-pswawebapplication](#to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication)
 - [To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager]()
 
 #### To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication
@@ -278,7 +278,7 @@ https://&lt;*server_name*&gt;/myWebApp.
 >You cannot sign in until users have
 been granted access to the website by adding authorization rules. For more
 information, see 
-[Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule) 
+[configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule) 
 and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
 #### To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager
@@ -328,7 +328,7 @@ Web Access web application. In the **Actions** pane, click **Bindings**.
 
 8. In the **SSL certificate** field, select your signed certificate from
 the drop-down menu. Click **OK**. See 
-[To configure an SSL certificate in IIS Manager](#To-configure-an-SSL-certificate-in-IIS-Manager) 
+[to configure an ssl certificate in iis manager](#to-configure-an-ssl-certificate-in-iis-manager) 
 in this topic for more information about how to
 obtain a certificate.
 
@@ -341,7 +341,7 @@ obtain a certificate.
 > 
 >You cannot sign in until users have been granted access to the website 
 >by adding authorization rules. 
->For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
+>For more information, see [configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
 ### Configure a restrictive authorization rule
 
@@ -438,9 +438,9 @@ IIS Manager.
 
 Instructions in this section are for installing the Windows PowerShell Web Access web application in a subdirectory—and not in the root directory—of your website. This procedure is the GUI-based equivalent of the actions performed by the `Install-PswaWebApplication` cmdlet. This section also includes instructions for how to use IIS Manager to configure the Windows PowerShell Web Access gateway as a root website.
 
-- [To use IIS Manager to configure the gateway in an existing website](#BKMK_configman)
+- [to use iis manager to configure the gateway in an existing website](#bkmk_configman)
 
-- [To use IIS Manager to configure the gateway as a root website with a test certificate](#BKMK_configroot)
+- [to use iis manager to configure the gateway as a root website with a test certificate](#bkmk_configroot)
 
 - 
 
@@ -467,7 +467,7 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 8.  In the **Physical path** field, browse for the location of the application. You can use the default location, %windir%/Web/PowerShellWebAccess/wwwroot. Click **OK**.
 
 9.  Follow the steps in the procedure 
-[To configure an SSL certificate in IIS Manager](#To-configure-an-SSL-certificate-in-IIS-Manager) 
+[to configure an ssl certificate in iis manager](#to-configure-an-ssl-certificate-in-iis-manager) 
 in this topic.
 
 10. <span class="label">Optional security step:</span> With the website 
@@ -482,7 +482,7 @@ security of Windows PowerShell Web Access, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx) 
 in this guide.
 
-11. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#BKMK_browser) in this topic.
+11. Open a browser session on a client device. For more information about supported browsers and devices, see [browser and client device support](#bkmk_browser) in this topic.
 
 12. Open the new Windows PowerShell Web Access website, https://&lt; *gateway_server_name*&gt;/pswa.
 
@@ -544,7 +544,7 @@ in this guide.
 
 9.  Optionally, if needed for your organization, specify a host name that makes sense to your organization and users, such as **www.contoso.com**. Click **OK**.
 
-10. For a more secure production environment, we strongly recommend providing a valid certificate that has been signed by a CA. You must provide an SSL certificate, because users can only connect to Windows PowerShell Web Access through an HTTPS website. See [To configure an SSL certificate in IIS Manager](#To-configure-an-SSL-certificate-in-IIS-Manager) in this topic for more information about how to obtain a certificate.
+10. For a more secure production environment, we strongly recommend providing a valid certificate that has been signed by a CA. You must provide an SSL certificate, because users can only connect to Windows PowerShell Web Access through an HTTPS website. See [to configure an ssl certificate in iis manager](#to-configure-an-ssl-certificate-in-iis-manager) in this topic for more information about how to obtain a certificate.
 
 11. Click **OK** to close the **Add Website** dialog box.
 
@@ -564,7 +564,7 @@ in this guide.
 
 13. With the new website selected in the IIS Manager tree pane, click **Start** in the **Actions** pane to start the website.
 
-14. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#BKMK_browser) in this document.
+14. Open a browser session on a client device. For more information about supported browsers and devices, see [browser and client device support](#bkmk_browser) in this document.
 
 15. Open the new Windows PowerShell Web Access website.
 

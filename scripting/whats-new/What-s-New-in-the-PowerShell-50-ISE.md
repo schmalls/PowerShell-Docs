@@ -18,16 +18,16 @@ The following table lists the new and changed features for this release of Windo
 
 |Feature/functionality|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|X|X||
-|**[Snippets](#bkmk_snippets)**|X|X||
-|**[Add-on Tools](#BKMK_AddOnTools)**|X|X||
-|**[Restart Manager and Auto-save](#BKMK_RestartMgr)**|X|X||
-|**[Console Pane](#BKMK_ConsolePane)**|X|X||
-|**[Most-recently used list](#BKMK_MRU)**|X|X||
-|**[Command-line switches](#BKMK_CommandLine)**|X|X||
-|**[New editor features](#BKMK_NewEditorFeatures)**|X|X||
-|**[New Help viewer window](#BKMK_NewHelpViewer)**|X|X||
-|**[Show-Command cmdlet](#BKMK_ShowCommand)**|X|X||
+|**[intellisense](#bkmk_intellisense)**|X|X||
+|**[snippets](#bkmk_snippets)**|X|X||
+|**[add-on tools](#bkmk_addontools)**|X|X||
+|**[restart manager and auto-save](#bkmk_restartmgr)**|X|X||
+|**[console pane](#bkmk_consolepane)**|X|X||
+|**[most-recently used list](#bkmk_mru)**|X|X||
+|**[command-line switches](#bkmk_commandline)**|X|X||
+|**[new editor features](#bkmk_neweditorfeatures)**|X|X||
+|**[new help viewer window](#bkmk_newhelpviewer)**|X|X||
+|**[show-command cmdlet](#bkmk_showcommand)**|X|X||
 
 ### <a name="BKMK_Intellisense"></a>IntelliSense
 **Added in ISE 3.0**

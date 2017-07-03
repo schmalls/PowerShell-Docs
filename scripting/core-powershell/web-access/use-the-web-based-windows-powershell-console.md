@@ -16,13 +16,13 @@ This topic does not describe how to use Windows PowerShell or run cmdlets or scr
 
 In this topic:
 
--   [Supported browsers and client devices](#BKMK_browser)
+-   [supported browsers and client devices](#bkmk_browser)
 
--   [Signing in to Windows PowerShell Web Access](#BKMK_sign)
+-   [signing in to windows powershell web access](#bkmk_sign)
 
--   [Signing out and timing out](#BKMK_timeout)
+-   [signing out and timing out](#bkmk_timeout)
 
--   [Differences in the web-based Windows PowerShell console](#BKMK_web)
+-   [differences in the web-based windows powershell console](#bkmk_web)
 
 <a href="" id="BKMK_browser"></a>
 ------------------------------------------------------------------------
@@ -133,9 +133,9 @@ Any of the following signs you out of a web-based Windows PowerShell session.
 
     Clicking **Exit** signs you out of the Windows PowerShell Web Access session without saving it.
 
--   Attempting to sign in to manage a different remote computer in the same browser session, or in a new tab of the same browser session. (This does not apply if the gateway server is running Windows Server 2012 R2; Windows PowerShell Web Access running on Windows Server 2012 R2 does allow multiple user sessions in new tabs in the same browser session.) For more information about how to use more than one active session on the same computer, see “Connecting to multiple target computers simultaneously” in the [Limitations of the web-based console](#BKMK_limits) section of this topic.
+-   Attempting to sign in to manage a different remote computer in the same browser session, or in a new tab of the same browser session. (This does not apply if the gateway server is running Windows Server 2012 R2; Windows PowerShell Web Access running on Windows Server 2012 R2 does allow multiple user sessions in new tabs in the same browser session.) For more information about how to use more than one active session on the same computer, see “Connecting to multiple target computers simultaneously” in the [limitations of the web-based console](#bkmk_limits) section of this topic.
 
--   20 minutes of inactivity in the session. The gateway administrator can customize the inactivity time-out period; for more information, see [Session management](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
+-   20 minutes of inactivity in the session. The gateway administrator can customize the inactivity time-out period; for more information, see [session management](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#bkmk_sesmgmt).
 
     -   If you are disconnected from a session in the web-based console because of a network error or other unplanned shutdown or failure, and not because you have closed the session yourself, the Windows PowerShell Web Access session continues to run, connected to the target computer, until the time-out period on the client side lapses. By default, this time-out period is 20 minutes, and is configured by the gateway administrator. The session is disconnected after either the default 20 minutes, or after the time-out period specified by the gateway administrator, whichever is shorter.
 
@@ -147,7 +147,7 @@ Any of the following signs you out of a web-based Windows PowerShell session.
 
 -   Running the **Exit** command in the web console. This command does not work if the session configuration to which you are connected to is configured to support [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) mode, or is in a restricted runspace.
 
-If you want to sign in again, open the Windows PowerShell Web Access web page again, and sign in by following the steps in [To sign in to Windows PowerShell Web Access](#BKMK_signin) in this topic.
+If you want to sign in again, open the Windows PowerShell Web Access web page again, and sign in by following the steps in [to sign in to windows powershell web access](#bkmk_signin) in this topic.
 
 <a href="" id="BKMK_web"></a>
 

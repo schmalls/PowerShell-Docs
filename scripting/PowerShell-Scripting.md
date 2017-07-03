@@ -18,7 +18,7 @@ and the processes related to the applications that run on those operating system
 PowerShell base source code is now available in GitHub and open to community
 contributions, see [PowerShell](https://github.com/powershell/powershell).
 
-You can start with the bits you need at [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
+You can start with the bits you need at [get powershell](https://github.com/powershell/powershell#get-powershell).
 Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
 >  **Note:**  

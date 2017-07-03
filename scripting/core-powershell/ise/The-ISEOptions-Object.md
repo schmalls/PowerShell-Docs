@@ -12,95 +12,95 @@ ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 
  **Methods**
 
--   [RestoreDefaultConsoleTokenColors()](#rdctc)
+-   [restoredefaultconsoletokencolors()](#rdctc)
 
--   [RestoreDefaults()](#rd)
+-   [restoredefaults()](#rd)
 
--   [RestoreDefaultTokenColors()](#rdtc)
+-   [restoredefaulttokencolors()](#rdtc)
 
--   [RestoreDefaultXmlTokenColors()](#rdxtc)
+-   [restoredefaultxmltokencolors()](#rdxtc)
 
  **Properties**
 
--   [AutoSaveMinuteInterval](#asmi)
+-   [autosaveminuteinterval](#asmi)
 
--   [CommandPaneBackgroundColor](#cpbc)
+-   [commandpanebackgroundcolor](#cpbc)
 
--   [CommandPaneUp](#cpu)
+-   [commandpaneup](#cpu)
 
--   [ConsolePaneBackgroundColor](#conpbc)
+-   [consolepanebackgroundcolor](#conpbc)
 
--   [ConsolePaneForegroundColor](#conpfc)
+-   [consolepaneforegroundcolor](#conpfc)
 
--   [ConsolePaneTextBackgroundColor](#conptbc)
+-   [consolepanetextbackgroundcolor](#conptbc)
 
--   [ConsoleTokenColors](#contc)
+-   [consoletokencolors](#contc)
 
--   [DebugBackgroundColor](#dbc)
+-   [debugbackgroundcolor](#dbc)
 
--   [DebugForegroundColor](#dfc)
+-   [debugforegroundcolor](#dfc)
 
--   [DefaultOptions](#do)
+-   [defaultoptions](#do)
 
--   [ErrorBackgroundColor](#ebc)
+-   [errorbackgroundcolor](#ebc)
 
--   [ErrorForegroundColor](#efc)
+-   [errorforegroundcolor](#efc)
 
--   [FontName](#fn)
+-   [fontname](#fn)
 
--   [FontSize](#fs)
+-   [fontsize](#fs)
 
--   [IntellisenseTimeoutInSeconds](#itis)
+-   [intellisensetimeoutinseconds](#itis)
 
--   [MruCount](#mc)
+-   [mrucount](#mc)
 
--   [OutputPaneBackgroundColor](#opbc)
+-   [outputpanebackgroundcolor](#opbc)
 
--   [OutputPaneTextForegroundColor](#optfc)
+-   [outputpanetextforegroundcolor](#optfc)
 
--   [OutputPaneTextBackgroundColor](#optbc)
+-   [outputpanetextbackgroundcolor](#optbc)
 
--   [ScriptPaneBackgroundColor](#spbc)
+-   [scriptpanebackgroundcolor](#spbc)
 
--   [ScriptPaneForegroundColor](#spfc)
+-   [scriptpaneforegroundcolor](#spfc)
 
--   [SelectedScriptPaneState](#ssps)
+-   [selectedscriptpanestate](#ssps)
 
--   [ShowDefaultSnippets](#sds)
+-   [showdefaultsnippets](#sds)
 
--   [ShowIntellisenseInConsolePane](#siicp)
+-   [showintellisenseinconsolepane](#siicp)
 
--   [ShowIntellisenseInScriptPane](#siisp)
+-   [showintellisenseinscriptpane](#siisp)
 
--   [ShowLineNumbers](#sln)
+-   [showlinenumbers](#sln)
 
--   [ShowOutlining](#so)
+-   [showoutlining](#so)
 
--   [ShowToolBar](#stb)
+-   [showtoolbar](#stb)
 
--   [ShowWarningBeforeSavingOnRun](#swbsor)
+-   [showwarningbeforesavingonrun](#swbsor)
 
--   [ShowWarningForDuplicateFiles](#swfdf)
+-   [showwarningforduplicatefiles](#swfdf)
 
--   [TokenColors](#tc)
+-   [tokencolors](#tc)
 
--   [UseEnterToSelectInConsolePaneIntellisense](#uetsicpi)
+-   [useentertoselectinconsolepaneintellisense](#uetsicpi)
 
--   [UseEnterToSelectInScriptPaneIntellisense](#uetsispi)
+-   [useentertoselectinscriptpaneintellisense](#uetsispi)
 
--   [UseLocalHelp](#ulh)
+-   [uselocalhelp](#ulh)
 
--   [VerboseBackgroundColor](#vbc)
+-   [verbosebackgroundcolor](#vbc)
 
--   [VerboseForegroundColor](#vfc)
+-   [verboseforegroundcolor](#vfc)
 
--   [WarningBackgroundColor](#wbc)
+-   [warningbackgroundcolor](#wbc)
 
--   [WarningForegroundColor](#wfc)
+-   [warningforegroundcolor](#wfc)
 
--   [XmlTokenColors](#xtc)
+-   [xmltokencolors](#xtc)
 
--   [Zoom](#z)
+-   [zoom](#z)
 
 ## Methods
 
@@ -140,7 +140,7 @@ $psISE.Options.RestoreDefaultTokenColors()
 ###  <a name="rdxtc"></a> RestoreDefaultXmlTokenColors\(\)
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
- Restores the default values of the token colors for XML elements that are displayed in Windows PowerShell ISE. Also see [XmlTokenColors](#xtc).
+ Restores the default values of the token colors for XML elements that are displayed in Windows PowerShell ISE. Also see [xmltokencolors](#xtc).
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -161,7 +161,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
 ###  <a name="cpbc"></a> CommandPaneBackgroundColor
-  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneBackgroundColor](#conpbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [consolepanebackgroundcolor](#conpbc).
 
  Specifies the background color for the Command pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -215,7 +215,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ###  <a name="contc"></a> ConsoleTokenColors
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
- Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane. This property is a dictionary object that contains name/value pairs of token types and colors for the Console pane. To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tc). To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors()](#rdctc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+ Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane. This property is a dictionary object that contains name/value pairs of token types and colors for the Console pane. To change the colors of the IntelliSense tokens in the Script pane, see [tokencolors](#tc). To reset the colors to the default values, see [restoredefaultconsoletokencolors()](#rdctc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```
 # Sets the color of commands to green.
@@ -354,7 +354,7 @@ $psISE.Options.MruCount = 5
 ```
 
 ###  <a name="opbc"></a> OutputPaneBackgroundColor
-  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneBackgroundColor](#conpbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [consolepanebackgroundcolor](#conpbc).
 
  The read/write property that gets or sets the background color for the Output pane itself. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -365,7 +365,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ```
 
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
-  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneForegroundColor](#conpfc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [consolepaneforegroundcolor](#conpfc).
 
  The read/write property that changes the foreground color of the text in the Output pane in Windows PowerShell ISE 2.0.
 
@@ -376,7 +376,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ```
 
 ###  <a name="optbc"></a> OutputPaneTextBackgroundColor
-  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneTextBackgroundColor](#conptbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [consolepanetextbackgroundcolor](#conptbc).
 
  The read/write property that changes the background color of the text in the Output pane.
 
@@ -401,7 +401,7 @@ $psISE.Options.ScriptPaneBackgroundColor = ”yellow”
   Supported in Windows PowerShell ISE 2.0 and later.
 
  The read/write property that gets or sets the foreground color for non-script files in the Script pane.
-To set the foreground color for script files, use the [TokenColors](The-ISEOptions-Object.md#tc) property.
+To set the foreground color for script files, use the [tokencolors](the-iseoptions-object.md#tc) property.
 
 ```
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -511,7 +511,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 ###  <a name="tc"></a> TokenColors
   Supported in Windows PowerShell ISE 2.0 and later.
 
- Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane. This property is a dictionary object that contains name/value pairs of token types and colors for the Script pane. To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#contc). To reset the colors to the default values, see [RestoreDefaultTokenColors()](#rdtc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+ Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane. This property is a dictionary object that contains name/value pairs of token types and colors for the Script pane. To change the colors of the IntelliSense tokens in the Console pane, see [consoletokencolors](#contc). To reset the colors to the default values, see [restoredefaulttokencolors()](#rdtc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```
 # Sets the color of commands to green.
@@ -599,7 +599,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
- Specifies a dictionary object that contains name/value pairs of token types and colors for XML content that is displayed in Windows PowerShell ISE. Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Also see [RestoreDefaultXmlTokenColors()](#rdxtc).
+ Specifies a dictionary object that contains name/value pairs of token types and colors for XML content that is displayed in Windows PowerShell ISE. Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Also see [restoredefaultxmltokencolors()](#rdxtc).
 
 ```
 # Sets the color of XML element names to green.

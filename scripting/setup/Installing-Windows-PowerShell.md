@@ -12,20 +12,20 @@ This topic explains how to install Windows PowerShell 3.0 on earlier systems and
 
 This topic includes the following sections:
 
--   [Installing Windows PowerShell on Windows 8 and Windows Server 2012](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindows8andWindowsServer2012)
+-   [installing windows powershell on windows 8 and windows server 2012](installing-windows-powershell.md#bkmk_installingonwindows8andwindowsserver2012)
 
--   [Installing Windows PowerShell on Windows 7 and Windows Server 2008 R2](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindows7andWindowsServer2008R2)
+-   [installing windows powershell on windows 7 and windows server 2008 r2](installing-windows-powershell.md#bkmk_installingonwindows7andwindowsserver2008r2)
 
--   [Installing Windows PowerShell on Windows Server 2008](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindowsServer2008LH)
+-   [installing windows powershell on windows server 2008](installing-windows-powershell.md#bkmk_installingonwindowsserver2008lh)
 
--   [Installing Windows PowerShell on Server Core](Installing-Windows-PowerShell.md#BKMK_InstallingOnServerCore)
+-   [installing windows powershell on server core](installing-windows-powershell.md#bkmk_installingonservercore)
 
 -   [Deploying Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/639d0eff-98a3-4124-b52c-26921ebd98b0)
 
 -   [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>Installing Windows PowerShell on Windows 8 and Windows Server 2012
-Windows PowerShell 3.0 arrives installed, configured, and ready to use. Windows PowerShell Integrated Scripting Environment (ISE) is installed and enabled. For information about starting Windows PowerShell, see [Starting Windows PowerShell on Windows 8](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3) and [Starting Windows PowerShell on Windows Server 2012](https://technet.microsoft.com/library/hh831491.aspx#BKMK_powershell).
+Windows PowerShell 3.0 arrives installed, configured, and ready to use. Windows PowerShell Integrated Scripting Environment (ISE) is installed and enabled. For information about starting Windows PowerShell, see [Starting Windows PowerShell on Windows 8](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3) and [starting windows powershell on windows server 2012](https://technet.microsoft.com/library/hh831491.aspx#bkmk_powershell).
 
 ## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>Installing Windows PowerShell on Windows 7 and Windows Server 2008 R2
 These instructions explain how to install Windows PowerShell 3.0 on computers running Windows 7 with Service Pack 1 and Windows Server 2008 R2 with Service Pack 1. There are separate installation instructions below for computers running with the Server Core installation option of Windows Server 2008 R2.
